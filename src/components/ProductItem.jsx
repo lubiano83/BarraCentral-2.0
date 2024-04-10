@@ -1,20 +1,22 @@
 /* ProductItem */
 
-import { View, StyleSheet, Image, Text} from 'react-native';
+import { View, StyleSheet, Image, Text, Pressable } from 'react-native';
 import Card from './Card';
 
-const ProductItem = ({ products }) => {
+const ProductItem = ({ product, setItemIdSelected = () => {} }) => {
+
+  console.log(product.id);
 
   return (
       <View style={styles.ProductItem}>
         <Card>
-          <View style={styles.ProductItem__View}>
-            <Image style={styles.View__Image} source={{uri: products.image}} />
-            <View style={styles.View__Text}>
-              <Text style={styles.Text__Title}>{products.title}</Text>
-              <Text style={styles.Text__Price}>{products.price}</Text>
+          <Pressable style={styles.ProductItem__Pressable} onPress={() => setItemIdSelected(product.id)}>
+            <Image style={styles.Pressable__Image} source={{uri: product.image}} />
+            <View style={styles.Pressable__Text}>
+              <Text style={styles.Text__Title}>{product.title}</Text>
+              <Text style={styles.Text__Price}>{product.price}</Text>
             </View>
-          </View>
+          </Pressable>
         </Card>
       </View>
   )
@@ -24,7 +26,7 @@ const styles = StyleSheet.create({
   ProductItem: {
     backgroundColor: "#000",
   },
-  ProductItem__View: {
+  ProductItem__Pressable: {
     width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
@@ -33,11 +35,11 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     height: "auto"
   },
-  View__Image: {
+  Pressable__Image: {
     width: "30%",
     aspectRatio: 1,
   },
-  View__Text: {
+  Pressable__Text: {
     width: "70%",
     paddingLeft: 10,
   },

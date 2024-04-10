@@ -5,7 +5,7 @@ import Logo from "./Logo";
 import Home from "./Home";
 import Ayuda from "./Ayuda";
 
-const Inicio = ({setCategorySelected}) => {
+const Inicio = ({ setCategorySelected }) => {
 
     return (
         <View style={styles.Inicio}>
@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
     Inicio__View:  {
         width: "100%",
         gap: -20,
+        paddingTop: 15,
     },
     View__Text: {
       color: "#fff",

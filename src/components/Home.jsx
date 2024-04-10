@@ -4,9 +4,8 @@ import { FlatList, View, StyleSheet, Pressable } from 'react-native';
 import categories from "../data/categories.json";
 import CategoryItem from "./CategoryItem";
 import Titulo from './Titulo';
-import { Ionicons } from '@expo/vector-icons';
 
-const Home = ({setCategorySelected}) => {
+const Home = ({ setCategorySelected }) => {
   
   return (
     <View style={styles.Home}>

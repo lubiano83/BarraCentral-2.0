@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import Titulo from './Titulo';
 import { MaterialIcons } from '@expo/vector-icons';
 
-const ItemListCategory = ({ categorySelected = "", goBack = () => {} }) => {
+const ItemListCategory = ({ categorySelected = "", goBack = () => {}, setItemIdSelected = () => {} }) => {
 
     const [keyword, setKeyword] = useState("");
     const [productsFiltered, setProductsFiltered] = useState([]);
@@ -34,7 +34,7 @@ const ItemListCategory = ({ categorySelected = "", goBack = () => {} }) => {
                     <TextInput style={styles.View__TextInput} placeholder='Search...' value={keyword} onChangeText={setKeyword} />
                 </View>
             </View>
-            <FlatList data={productsFiltered} renderItem={({item}) => <ProductItem products={item}/> } keyExtractor={product => product.id} categorySelected={categorySelected} />
+            <FlatList data={productsFiltered} renderItem={({item}) => <ProductItem product={item} setItemIdSelected={setItemIdSelected} /> } keyExtractor={product => product.id} categorySelected={categorySelected} />
         </View>
     )
 }; export default ItemListCategory;
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     },
     View__TextInput: {
         width: "100%",
-        height: 40,
+        height: 50,
         backgroundColor: "#fff",
         borderRadius: 10,
         paddingHorizontal: 20,
