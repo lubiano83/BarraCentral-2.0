@@ -1,16 +1,22 @@
 /* Logo */
 
-import { StyleSheet, Image } from 'react-native';
-import { Foundation } from '@expo/vector-icons';
+import { StyleSheet, Image, Pressable, Text, View } from 'react-native';
 import { Feather } from '@expo/vector-icons';
+import { Zocial } from '@expo/vector-icons';
 
 const Logo = ({source}) => {
   return (
-    <>
-      <Image style={styles.Logo} source={source}/>
-      <Feather style={styles.Icon__Cart} name="shopping-cart" size={50} color="#fff" />
-      <Foundation style={styles.Icon__Mail} name="mail" size={50} color="#fff" />
-    </>
+    <View>
+        <Image style={styles.Logo} source={source} />
+        <Pressable style={styles.Container__Icon}>
+            <Zocial style={styles.Icon__Mail} name="email" size={50} color="#fff" />
+        </Pressable>
+        <Pressable style={styles.Container__Icon}>
+                <Feather style={styles.Icon__Cart} name="shopping-cart" size={50} color="#fff" />
+                <Text style={styles.Cart__Text}>7</Text>
+        </Pressable>
+        
+    </View>
   )
 }; export default Logo;
 
@@ -20,14 +26,19 @@ const styles = StyleSheet.create({
         height: 250,
         objectFit: 'contain',
     },
-    Icon__Mail : {
-      position: 'absolute',
-      left: 20,
-      top: 20,
+    Container__Icon: {
+        position: 'absolute',
+        zIndex: 200,
+    },
+    Icon__Mail: {
+        
     },
     Icon__Cart: {
-      position: 'absolute',
-      right: 20,
-      top: 20,
+    },
+    Icon__Cart: {
+
+    },
+    Cart__Text: {
+
     },
 });

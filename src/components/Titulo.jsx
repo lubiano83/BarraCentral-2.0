@@ -2,11 +2,11 @@
 
 import { Text, StyleSheet } from 'react-native';
 
-const Titulo = ({titulo}) => {
+const Titulo = ({title}) => {
   
   return (
     <Text style={styles.Titulo}>
-        {titulo}
+        {title}
     </Text>
   )
 }; export default Titulo;
