@@ -13,7 +13,7 @@ const Home = ({ navigation }) => {
       <View style={styles.Home}>
           <View style={styles.Home__View}>
           </View>
-          <FlatList showsVerticalScrollIndicator={false} keyExtractor={elemntoDeMiArray => elemntoDeMiArray} data={categories.sort()} renderItem={({item}) => <CategoryItem navigation={navigation} category={item} /> } />
+          <FlatList showsVerticalScrollIndicator={false} keyExtractor={elemntoDeMiArray => elemntoDeMiArray} data={categories} renderItem={({item}) => <CategoryItem navigation={navigation} category={item} /> } />
       </View>
     </>
   )
@@ -26,7 +26,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         paddingHorizontal: 20,
         backgroundColor: "#000",
-        paddingTop: 15,
         height: "100%",
     }, 
     Home__View: {

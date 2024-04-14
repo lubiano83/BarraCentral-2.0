@@ -14,7 +14,7 @@ const Titulo = ({title}) => {
 const styles = StyleSheet.create({
     // Titulo
     Titulo: {
-        fontSize: 30,
+        fontSize: 36,
         fontWeight: 'bold',
         color: '#fff',
         textAlign: 'center',

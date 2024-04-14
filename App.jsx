@@ -5,7 +5,6 @@ import ItemListCategory from "./src/screens/ItemListCategory";
 import ItemDetail from "./src/screens/ItemDetail";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Header from "./src/components/Header";
 import Home from "./src/screens/Home";
 import Inicio from "./src/screens/Inicio";
 
@@ -16,7 +15,7 @@ export default function App() {
   return (
     <SafeAreaView style={styles.App}>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Inicio" screenOptions={({route}) => ({header: () => { return component={Inicio} ? "" : "" }})}>
+        <Stack.Navigator initialRouteName="Inicio" screenOptions={({route}) => ({header: () => {}})}>
           <Stack.Screen name="Inicio" component={Inicio} />
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="ItemListCategory" component={ItemListCategory} />
