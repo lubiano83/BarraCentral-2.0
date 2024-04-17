@@ -22,13 +22,13 @@ const ItemListCategory = ({ navigation, route }) => {
     }, [keyword, category]);
 
     return (
-        <>
+        <View style={styles.container__ItemListCategory}>
             <Header title={category} navigation={navigation}/>
             <View style={styles.ItemListCategory}>
                 <TextInput style={styles.ItemListCategory__TextInput} placeholder='Search...' value={keyword} onChangeText={setKeyword} />
                 <FlatList data={productsFiltered} renderItem={({item}) => <ProductItem product={item} navigation={navigation} /> } keyExtractor={product => product.id} />
             </View>
-        </>
+        </View>
     )
 }; export default ItemListCategory;
 
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
         width: "100%",
-        paddingHorizontal: 30,
+        paddingHorizontal: 20,
         backgroundColor: "#000",
         height: "100%",
     },

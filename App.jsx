@@ -1,26 +1,17 @@
 /* BarraCentral */
 
 import { StyleSheet, SafeAreaView, Platform, StatusBar } from "react-native";
-import ItemListCategory from "./src/screens/ItemListCategory";
-import ItemDetail from "./src/screens/ItemDetail";
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Home from "./src/screens/Home";
-import Inicio from "./src/screens/Inicio";
-
-const Stack = createNativeStackNavigator();
+import InicioStack from "./src/navigation/InicioStack";
+import BottomTab from "./src/navigation/BottomTab";
 
 export default function App() {
 
   return (
     <SafeAreaView style={styles.App}>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Inicio" screenOptions={({route}) => ({header: () => {}})}>
-          <Stack.Screen name="Inicio" component={Inicio} />
-          <Stack.Screen name="Home" component={Home} />
-          <Stack.Screen name="ItemListCategory" component={ItemListCategory} />
-          <Stack.Screen name="ItemDetail" component={ItemDetail} />
-        </Stack.Navigator>
+        {/* <InicioStack /> */}
+        <BottomTab />
       </NavigationContainer>
     </SafeAreaView>
   );

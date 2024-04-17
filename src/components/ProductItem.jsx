@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   Text__Price: {
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: 'bold',
     color: '#000',
     textAlign: 'right',

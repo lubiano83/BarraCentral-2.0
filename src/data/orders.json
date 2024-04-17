@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "userId": 2,
+        "createdAt": 1679869276580,
+        "items": [
+            {
+                "id": 30,
+                "title": "Piña Colada",
+                "description": "Crema de coco, ron blanco, malibu, jugo de piña fresco, goma",
+                "price": "$8.500",
+                "stock": 20,
+                "category": "Bar",
+                "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Fpin%CC%83a-colada.webp?alt=media&token=2c073d99-abf1-4b86-ac11-a53ee5a6f8b0",
+                "quantity": 1
+            },
+            {
+                "id": 6,
+                "title": "Royal With Cheese 2.0",
+                "description": "160gr de angus, mostaza con miel, cebolla crispy, doble cheddar, tocino ahumado, pepinillos y salsa bbq de base.",
+                "price": "$9.990",
+                "stock": 20,
+                "category": "Sandwiches",
+                "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Froyal-with-cheese.webp?alt=media&token=9797ff1f-3c3a-4fce-8537-a17eaf6e2c3d",
+                "quantity": 1
+            }
+        ]
+    },
+    {
+    "id": 2,
+        "userId": 2,
+        "createdAt": 1679869276580,
+        "items": [
+            {
+                "id": 7,
+                "title": "Baos",
+                "description": "Baos rellenos hongos o pork belly, laminasde pepino alaska y salsa tzatziki conmenta..",
+                "price": "$11.990",
+                "stock": 20,
+                "category": "Para Compartir",
+                "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Fbaos.webp?alt=media&token=4dfe55d1-277b-4347-a783-cdd2ec7fdee3",
+                "quantity": 1
+            },
+            {
+                "id": 24,
+                "title": "Jugo Natural Frambuesa",
+                "description": "Jugo Natural Preparado y enlatado al momento. 330cc",
+                "price": "$3.500",
+                "stock": 20,
+                "category": "Bar",
+                "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Fjugo-natural-frambuesa.webp?alt=media&token=f183c8b5-3b8e-40bc-9360-137b49063430",
+                "quantity": 1
+            }
+        ]
+    }
+]

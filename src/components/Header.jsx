@@ -2,7 +2,6 @@
 
 import { View, StyleSheet } from 'react-native';
 import Titulo from './Titulo';
-import Cart from './Cart';
 import Back from './Back';
 
 const Header = ({ title, navigation }) => {
@@ -10,7 +9,6 @@ const Header = ({ title, navigation }) => {
     <View style={styles.Header}>
         <Back navigation={navigation} />
         <Titulo title={title}/>
-        <Cart navigation={navigation} />
     </View>
   )
 }; export default Header;
@@ -19,10 +17,9 @@ const styles = StyleSheet.create({
     Header: {
         flexDirection: "row",
         alignItems: "center",
-        justifyContent: "space-between",
+        justifyContent: "center",
         paddingLeft: 20,
-        paddingRight: 27,
-        paddingVertical: 10,
+        paddingRight: 20,
         backgroundColor: "#000",
     },
     

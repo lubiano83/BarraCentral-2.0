@@ -1,0 +1,32 @@
+[
+    {
+        "id": 4,
+        "title": "Fritten Chicken",
+        "description": "Pollo Crispy, mayo spicy, coleslaw casero, pepinillos y mostaza barra central.",
+        "price": 9990,
+        "stock": 20,
+        "category": "Sandwiches",
+        "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Ffritten-chicken.webp?alt=media&token=00554f45-087b-4d1f-acc7-4877346e552a",
+        "quantity": 2
+    },
+    {
+        "id": 17,
+        "title": "Tartaro de Res Magro",
+        "description": "Corte de res magro picado a mano, alcaparras, cebolla y limon con toques trufados y grana padano en laminas.",
+        "price": 9500,
+        "stock": 20,
+        "category": "Para Compartir",
+        "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Ftartaro-de-res-magro.webp?alt=media&token=951d8aa7-aaef-4451-af0e-b8afa61ca754",
+        "quantity": 1
+    },
+    {
+        "id": 29,
+        "title": "Mojito Cubano",
+        "description": "El mismo mojito que te pides en barra ahora disponible para tomarlo en casa.",
+        "price": 6000,
+        "stock": 20,
+        "category": "Bar",
+        "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Fmojito-cubano.webp?alt=media&token=04681e9b-cb62-48c0-9630-7aea4e8a1954",
+        "quantity": 3
+    }
+]
