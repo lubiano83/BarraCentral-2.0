@@ -12,7 +12,7 @@ const ProductItem = ({ product, navigation }) => {
             <Image style={styles.Pressable__Image} source={{uri: product.image}} />
             <View style={styles.Pressable__Text}>
               <Text style={styles.Text__Title}>{product.title}</Text>
-              <Text style={styles.Text__Price}>{product.price}</Text>
+              <Text style={styles.Text__Price}>${product.price}</Text>
             </View>
           </Pressable>
         </Card>
@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
   Pressable__Text: {
     width: "70%",
     paddingLeft: 10,
+    paddingRight: 10,
   },
   Text__Title: {
     fontSize: 20,
@@ -49,7 +50,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   Text__Price: {
-    fontSize: 20,
+    fontSize: 16,
     fontWeight: 'bold',
     color: '#000',
     textAlign: 'right',

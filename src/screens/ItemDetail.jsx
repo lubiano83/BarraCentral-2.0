@@ -3,7 +3,6 @@
 import { View, StyleSheet, Image, Text } from "react-native";
 import products from "../data/products.json";
 import { useState, useEffect } from "react";
-import Titulo from "../components/Titulo";
 import Header from "../components/Header";
 import Agregar from "../components/Agregar";
 
@@ -29,10 +28,9 @@ const ItemDetail = ({ route, navigation }) => {
             <Image style={styles.ItemDetail__Image} source={{uri: product.image}} />
           </View>
           <View style={styles.ItemDetail__Text}>
-            <Titulo title={product.title} />
+            <Text style={styles.Text__Titulo}>{product.title}</Text>
             <Text style={styles.Text}>Descripción: {product.description}</Text>
-            <Text style={styles.Text}>Cantidad: {product.stock}</Text>
-            <Text style={styles.Text__Price}>Precio: {product.price}</Text>
+            <Text style={styles.Text__Price}>Precio: ${product.price}</Text>
           </View>
           <Agregar />
         </View>
@@ -45,10 +43,8 @@ const ItemDetail = ({ route, navigation }) => {
 const styles = StyleSheet.create({
     ItemDetail: {
       height: "100%",
-      gap: 20,
       alignContent: "center",
       justifyContent: "space-between",
-      paddingBottom: 30,
       backgroundColor: "#000",
     },
     ItemDetail__Image: {
@@ -69,6 +65,11 @@ const styles = StyleSheet.create({
     Text__Price: {
       fontSize: 20,
       color: "#fff",
+    },
+    Text__Titulo: {
+      fontSize: 28,
+      color: "#fff",
+      fontWeight: "bold",
     },
     
 });

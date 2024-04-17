@@ -3,7 +3,7 @@
         "id": 1,
         "title": "Cuyanito Especial",
         "description": "Asado de tira con hueso en pan brioche sobre cama de tomates deshidratados, cebolla encurtida, mix de hojas verdes y mostaza con miel. (16 horas al horno)",
-        "price": "$14.400",
+        "price": 14400,
         "stock": 20,
         "category": "Sandwiches",
         "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Fcuyanito-especial.jpeg?alt=media&token=5f1841fb-44e5-4ed8-b05d-e8e5efd3bdda"
@@ -12,7 +12,7 @@
         "id": 2,
         "title": "Papas de Camote",
         "description": "Camote Frito",
-        "price": "$6.500",
+        "price": 6500,
         "stock": 20,
         "category": "Para Compartir",
         "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Fpapas-camote.jpeg?alt=media&token=08199bc1-b537-46ee-bd53-3008b1e5a456"
@@ -21,7 +21,7 @@
         "id": 3,
         "title": "Moscow Mule",
         "description": "Vodka, triple sec, ginger beer, jengibre, menta.",
-        "price": "$7.990",
+        "price": 7990,
         "stock": 20,
         "category": "Bar",
         "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Fmoscow-mule.webp?alt=media&token=f6b61965-4b44-432d-93cb-6a37e3a89370"
@@ -30,7 +30,7 @@
         "id": 4,
         "title": "Fritten Chicken",
         "description": "Pollo Crispy, mayo spicy, coleslaw casero, pepinillos y mostaza barra central.",
-        "price": "$9.990",
+        "price": 9990,
         "stock": 20,
         "category": "Sandwiches",
         "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Ffritten-chicken.webp?alt=media&token=00554f45-087b-4d1f-acc7-4877346e552a"
@@ -39,7 +39,7 @@
         "id": 5,
         "title": "Pescado Frito",
         "description": "Pescado Fresco frito en batido de cerveza artesanal, sobre base de ensalada chilena, mayonesa casera y cilantro. Pan Brioche",
-        "price": "$9.990",
+        "price": 9990,
         "stock": 20,
         "category": "Sandwiches",
         "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Fpescado-frito.webp?alt=media&token=0bf3e6a6-a6ba-4a5a-a86f-0f2ccc03d677"
@@ -48,7 +48,7 @@
         "id": 6,
         "title": "Royal With Cheese 2.0",
         "description": "160gr de angus, mostaza con miel, cebolla crispy, doble cheddar, tocino ahumado, pepinillos y salsa bbq de base.",
-        "price": "$9.990",
+        "price": 9990,
         "stock": 20,
         "category": "Sandwiches",
         "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Froyal-with-cheese.webp?alt=media&token=9797ff1f-3c3a-4fce-8537-a17eaf6e2c3d"
@@ -57,7 +57,7 @@
         "id": 7,
         "title": "Baos",
         "description": "Baos rellenos hongos o pork belly, laminasde pepino alaska y salsa tzatziki conmenta..",
-        "price": "$11.990",
+        "price": 11990,
         "stock": 20,
         "category": "Para Compartir",
         "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Fbaos.webp?alt=media&token=4dfe55d1-277b-4347-a783-cdd2ec7fdee3"
@@ -66,7 +66,7 @@
         "id": 8,
         "title": "Calugas de pescado",
         "description": "Deliciosas calugas de pescado fresco apanado en nuestra cerveza artesanal",
-        "price": "$8.700",
+        "price": 8700,
         "stock": 20,
         "category": "Para Compartir",
         "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Fcalugas-de-pescado.webp?alt=media&token=b8bef679-4851-40a3-88b9-346ca6b4b876"
@@ -75,7 +75,7 @@
         "id": 9,
         "title": "Ceviche de Pesca Local",
         "description": "Cevichazo con leche de tigre peruana, pimentón, cebolla y cilantro",
-        "price": "$9.900",
+        "price": 9900,
         "stock": 20,
         "category": "Para Compartir",
         "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Fceviche-de-pesca-local.webp?alt=media&token=ef6719d9-08c2-4843-8f4a-f176b9f88308"
@@ -84,7 +84,7 @@
         "id": 10,
         "title": "Costillas en Larga Coccion",
         "description": "Costillas en cocción de 9 horas. opcion ahumada parrillera y opcion asiatica al vapor, cada una con su ensalada.",
-        "price": "$14.000",
+        "price": 14000,
         "stock": 20,
         "category": "Para Compartir",
         "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Fcostillas-en-larga-coccion.webp?alt=media&token=4d4db32c-26be-4025-8336-69eefc53a573"
@@ -93,7 +93,7 @@
         "id": 11,
         "title": "Croquetas de Prieta",
         "description": "Crocantes croquetas con manzana verde, almendras garrapiñadas sobre salsa wasakaka y chutney de cebolla.",
-        "price": "$9.000",
+        "price": 9000,
         "stock": 20,
         "category": "Para Compartir",
         "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Fcroquetas-de-prieta.webp?alt=media&token=eee4acfb-44e8-42f4-bc62-2749f1dc6869"
@@ -102,7 +102,7 @@
         "id": 12,
         "title": "Croquetas de Pulpo & Langostino",
         "description": "Crocantes croquetas acomopañadas de salsa romesco, alioli y chimichurri.",
-        "price": "$9.000",
+        "price": 9000,
         "stock": 20,
         "category": "Para Compartir",
         "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Fcroquetas-de-pulto-y-langostino-parmesano.webp?alt=media&token=021e8a1c-2882-44da-af6d-ddeee1506c4a"
@@ -111,7 +111,7 @@
         "id": 13,
         "title": "Empanadas",
         "description": "Tres empanadas de langostino nacional yqueso. (la receta de la abuelita).",
-        "price": "$8.000",
+        "price": 8000,
         "stock": 20,
         "category": "Para Compartir",
         "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Fempanadas.webp?alt=media&token=6fa47394-908d-45ae-8d04-bb24feab358a"
@@ -120,7 +120,7 @@
         "id": 14,
         "title": "Hummus con vegetales",
         "description": "Hummus con vegetales encurtidos y aceite verde",
-        "price": "$10.000",
+        "price": 10000,
         "stock": 20,
         "category": "Para Compartir",
         "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Fhummus-con-vegetales.webp?alt=media&token=51750722-55b3-417e-8ff6-3a34eb6b8a95"
@@ -129,7 +129,7 @@
         "id": 15,
         "title": "Papas, cheddar y panceta",
         "description": "Papas Barra con cheddar y panceta",
-        "price": "$9.000",
+        "price": 9000,
         "stock": 20,
         "category": "Para Compartir",
         "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Fpapas-cheddar-panceta.webp?alt=media&token=d1c4146f-8c7b-461f-938f-1da4e5bca2fa"
@@ -138,7 +138,7 @@
         "id": 16,
         "title": "Pulpo con Papas Crocantes",
         "description": "Pulpo salteado sobre cama de papas crocantes con salsa romesco y chimichurri",
-        "price": "$10.900",
+        "price": 10900,
         "stock": 20,
         "category": "Para Compartir",
         "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Fpulpo-con-papas-crocantes.webp?alt=media&token=db262a47-1408-43d1-8ff1-ac2085f6c20f"
@@ -147,7 +147,7 @@
         "id": 17,
         "title": "Tartaro de Res Magro",
         "description": "Corte de res magro picado a mano, alcaparras, cebolla y limon con toques trufados y grana padano en laminas.",
-        "price": "$9.500",
+        "price": 9500,
         "stock": 20,
         "category": "Para Compartir",
         "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Ftartaro-de-res-magro.webp?alt=media&token=951d8aa7-aaef-4451-af0e-b8afa61ca754"
@@ -156,7 +156,7 @@
         "id": 18,
         "title": "Aperol",
         "description": "Mezcla Aperol con una botella de espumante brut, Rodajas de Naranja y 1kg de Hielo",    
-        "price": "$16.400",
+        "price": 16400,
         "stock": 20,
         "category": "Bar",
         "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Faperol.webp?alt=media&token=b7aa0365-cc2a-4416-bd5b-545a91a63942"
@@ -165,7 +165,7 @@
         "id": 19,
         "title": "Aperol Spritz",
         "description": "aperol spritz, espumante y soda, acompañado de rodajas de naranja fresca, version individual",    
-        "price": "$6.000",
+        "price": 6000,
         "stock": 20,
         "category": "Bar",
         "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Faperol-spritz.webp?alt=media&token=466d551f-d291-466b-a689-c101c0b2dd64"
@@ -174,7 +174,7 @@
         "id": 20,
         "title": "Bebidas Varias",
         "description": "Coca-cola, Fanta, Sprite, etc.",
-        "price": "$2.500",
+        "price": 2500,
         "stock": 20,
         "category": "Bar",
         "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Fbebidas-varias.webp?alt=media&token=e2bd770c-5268-4041-89ad-5ddfd4a82948"
@@ -183,7 +183,7 @@
         "id": 21,
         "title": "Coctail de Autor",
         "description": "Gin beefeater, campari, vermouth rosso, jugo de pomelo fresco, tonica y limon.",
-        "price": "$8.500",
+        "price": 8500,
         "stock": 20,
         "category": "Bar",
         "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Fcoctail-de-autor.webp?alt=media&token=863864b0-7d39-4a27-a303-3c2cd6b6398c"
@@ -192,7 +192,7 @@
         "id": 22,
         "title": "Growler, cerveza artesanal",
         "description": "Botellon de 1lt de cerveza, de nuestra lineas artesanales",
-        "price": "$12.000",
+        "price": 12000,
         "stock": 20,
         "category": "Bar",
         "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Fgrowler-mas-cerveza-artesanal.webp?alt=media&token=e7204872-dcb8-45df-b662-a14061cc2072"
@@ -201,7 +201,7 @@
         "id": 23,
         "title": "Jugo Natural Chirimoya",
         "description": "Jugo Natural Preparado y enlatado al momento. 330cc",
-        "price": "$3.500",
+        "price": 3500,
         "stock": 20,
         "category": "Bar",
         "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Fjugo-natural-chirimoya.webp?alt=media&token=4d51ccca-8f2e-4274-acb9-856d95d770c8"
@@ -210,7 +210,7 @@
         "id": 24,
         "title": "Jugo Natural Frambuesa",
         "description": "Jugo Natural Preparado y enlatado al momento. 330cc",
-        "price": "$3.500",
+        "price": 3500,
         "stock": 20,
         "category": "Bar",
         "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Fjugo-natural-frambuesa.webp?alt=media&token=f183c8b5-3b8e-40bc-9360-137b49063430"
@@ -219,7 +219,7 @@
         "id": 25,
         "title": "Jugo Natural Mango",
         "description": "Jugo Natural Preparado y enlatado al momento. 330cc",
-        "price": "$3.500",
+        "price": 3500,
         "stock": 20,
         "category": "Bar",
         "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Fjugo-natural-mango.webp?alt=media&token=79e9f830-59cd-4f53-a25f-9c8d443f4779"
@@ -228,7 +228,7 @@
         "id": 26,
         "title": "Jugo Natural Maracuya",
         "description": "Jugo Natural Preparado y enlatado al momento. 330cc",
-        "price": "$3.500",
+        "price": 3500,
         "stock": 20,
         "category": "Bar",
         "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Fjugo-natural-maracuya.webp?alt=media&token=1842c180-63bc-4183-ad29-0f1b51af0891"
@@ -237,7 +237,7 @@
         "id": 27,
         "title": "Jugo Natural Piña",
         "description": "Jugo Natural Preparado y enlatado al momento. 330cc",
-        "price": "$3.500",
+        "price": 3500,
         "stock": 20,
         "category": "Bar",
         "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Fjugo-natural-pin%CC%83a.webp?alt=media&token=0292c7b0-3c65-4523-9420-18a7afa22b18"
@@ -246,7 +246,7 @@
         "id": 28,
         "title": "Kombuchu Maracuya 333 ml",
         "description": "Hibiscus Frambuesa",
-        "price": "$4.500",
+        "price": 4500,
         "stock": 20,
         "category": "Bar",
         "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Fkumbuchu-maracuya-%20333ml.webp?alt=media&token=416fef2e-2292-46d0-b896-e61219ee96a5"
@@ -255,7 +255,7 @@
         "id": 29,
         "title": "Mojito Cubano",
         "description": "El mismo mojito que te pides en barra ahora disponible para tomarlo en casa.",
-        "price": "$6.000",
+        "price": 6000,
         "stock": 20,
         "category": "Bar",
         "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Fmojito-cubano.webp?alt=media&token=04681e9b-cb62-48c0-9630-7aea4e8a1954"
@@ -264,7 +264,7 @@
         "id": 30,
         "title": "Piña Colada",
         "description": "Crema de coco, ron blanco, malibu, jugo de piña fresco, goma",
-        "price": "$8.500",
+        "price": 8500,
         "stock": 20,
         "category": "Bar",
         "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Fpin%CC%83a-colada.webp?alt=media&token=2c073d99-abf1-4b86-ac11-a53ee5a6f8b0"
@@ -273,7 +273,7 @@
         "id": 31,
         "title": "Ramazzotti",
         "description": "Ramazzotti, espumante brut, arandanos, menta y agua con gas.",
-        "price": "$6.000",
+        "price": 6000,
         "stock": 20,
         "category": "Bar",
         "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Framazzotti.webp?alt=media&token=53a1160c-8c3c-44f3-989c-883398afe793"
@@ -282,7 +282,7 @@
         "id": 32,
         "title": "Sangria Barra Central",
         "description": "Sangria De la casa acompañada con pedazos de fruta y 1kg de Hielo",
-        "price": "$13.500",
+        "price": 13500,
         "stock": 20,
         "category": "Bar",
         "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Fsangria-barra-central.webp?alt=media&token=0fe386d2-6172-4050-854f-c1249a4b1a53"
@@ -291,7 +291,7 @@
         "id": 33,
         "title": "Sour Catedral",
         "description": "El mismo sour que te pides en barra ahora disponible para recibirlo en casa",
-        "price": "$8.500",
+        "price": 8500,
         "stock": 20,
         "category": "Bar",
         "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Fsour-catedral.webp?alt=media&token=9307e648-2251-4764-b015-28559de72fd9"
@@ -300,7 +300,7 @@
         "id": 34,
         "title": "Sour Peruano 1LT",
         "description": "Pisco Sour Peruano con limon sutil, Pisco Quebranta y 1kg de Hielo",
-        "price": "$13.000",
+        "price": 13000,
         "stock": 20,
         "category": "Bar",
         "image": "https://firebasestorage.googleapis.com/v0/b/barracentral-71b11.appspot.com/o/img%2Fsour-peruano-1lt.webp?alt=media&token=40de6c5a-c083-4888-af63-b95e72a2c0f3"

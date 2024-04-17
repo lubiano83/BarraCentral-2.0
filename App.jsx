@@ -2,7 +2,6 @@
 
 import { StyleSheet, SafeAreaView, Platform, StatusBar } from "react-native";
 import { NavigationContainer } from '@react-navigation/native';
-import InicioStack from "./src/navigation/InicioStack";
 import BottomTab from "./src/navigation/BottomTab";
 
 export default function App() {
@@ -10,7 +9,6 @@ export default function App() {
   return (
     <SafeAreaView style={styles.App}>
       <NavigationContainer>
-        {/* <InicioStack /> */}
         <BottomTab />
       </NavigationContainer>
     </SafeAreaView>

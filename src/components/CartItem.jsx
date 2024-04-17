@@ -7,8 +7,8 @@ const CartItem = ({cartItem}) => {
     <View style={styles.CartItem}>
         <Image style={styles.CartItem__Image} source={{uri: cartItem.image}} />
         <View style={styles.CartItem__View}>
-            <Text style={styles.View__Text}>{cartItem.title} ({cartItem.quantity})</Text>
-            <Text style={styles.View__Text}>{cartItem.price * cartItem.quantity}</Text>
+            <Text style={styles.View__Title}>{cartItem.title}</Text>
+            <Text style={styles.View__Price}>({cartItem.quantity}) ${cartItem.price * cartItem.quantity}</Text>
         </View>
     </View>
   )
@@ -40,8 +40,15 @@ const styles = StyleSheet.create({
     paddingRight: 20,
     gap: 5,
   },
-  View__Text: {
+  View__Title: {
     fontSize: 20,
+    fontWeight: 'bold',
+    color: '#000',
+    textAlign: 'right',
+    width: "100%",
+  },
+  View__Price: {
+    fontSize: 16,
     fontWeight: 'bold',
     color: '#000',
     textAlign: 'right',

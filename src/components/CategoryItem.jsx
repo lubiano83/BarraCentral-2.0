@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
         color: '#000',
         fontWeight: 'bold',
         textAlign: "right",
+        paddingRight: 10,
     },
     CategoryItem__img: {
         width: "30%",
