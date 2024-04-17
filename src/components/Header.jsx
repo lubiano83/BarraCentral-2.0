@@ -2,12 +2,12 @@
 
 import { View, StyleSheet } from 'react-native';
 import Titulo from './Titulo';
-import Back from './Back';
+import ArrowBack from './ArrowBack';
 
 const Header = ({ title, navigation }) => {
   return (
     <View style={styles.Header}>
-        <Back navigation={navigation} />
+        <ArrowBack navigation={navigation} />
         <Titulo title={title}/>
     </View>
   )

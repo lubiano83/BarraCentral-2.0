@@ -11,14 +11,14 @@ const Cart = () => {
 
   return (
     <View style={styles.View__Cart}>
-        <Titulo title="Carrito" />
+        <Titulo title="Cart" />
         <View style={styles.Cart}>
             <FlatList data={CartData} keyExtractor={cartItem => cartItem.id} renderItem={({item}) => <CartItem cartItem={item} /> } />
         </View>
         <View style={styles.Cart__View}>
             <Text style={styles.View__Text}>Total: ${TOTAL}</Text>
             <Pressable style={styles.View__Pressable}>
-                <Text style={styles.Pressable__Text}>Comprar</Text>
+                <Text style={styles.Pressable__Text}>Buy</Text>
             </Pressable>
         </View>
     </View>

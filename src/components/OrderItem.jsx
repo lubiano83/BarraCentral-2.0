@@ -2,7 +2,6 @@
 
 import { Text, View, StyleSheet } from 'react-native';
 import { Feather } from "@expo/vector-icons";
-import Titulo from './Titulo';
 
 const OrderItem = ({orderItem}) => {
 
@@ -23,13 +22,11 @@ const OrderItem = ({orderItem}) => {
 
 const styles = StyleSheet.create({
     OrderItem: {
-        height: 100,
+        height: 75,
         width: "100%",
         flexDirection: "row",
         alignItems: 'center',
         justifyContent: "space-between",
-        borderWidth: 2,
-        borderColor: "#fff",
         borderRadius: 10,
         overflow: 'hidden',
         backgroundColor: "#fff",
@@ -39,7 +36,6 @@ const styles = StyleSheet.create({
     OrderItem__View: {
         alignItems: "flex-start",
         justifyContent: "center",
-        gap: 5,
     },
     View__Text: {
         fontSize: 20,

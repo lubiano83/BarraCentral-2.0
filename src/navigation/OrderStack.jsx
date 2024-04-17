@@ -2,7 +2,7 @@
 
 import { StyleSheet } from 'react-native';
 import Order from "../screens/Order";
-import { createNativeStackNavigator } from "@react-navigation/native-stack"
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const Stack = createNativeStackNavigator()
 

@@ -6,7 +6,7 @@ import { Zocial } from '@expo/vector-icons';
 const InicioMail = () => {
   return (
     <Pressable style={styles.InicioMail}>
-        <Zocial name="email" size={50} color="#fff" />
+        <Zocial name="email" size={36} color="#fff" />
     </Pressable>
   )
 }; export default InicioMail;
