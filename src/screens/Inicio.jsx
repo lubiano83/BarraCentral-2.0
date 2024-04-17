@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
         justifyContent:"center",
         position: "absolute",
         gap: -60,
-        bottom: 145,
+        bottom: 65,
     },
 });
   

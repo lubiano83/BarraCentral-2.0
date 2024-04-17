@@ -35,12 +35,10 @@ const styles = StyleSheet.create({
       backgroundColor: "#000",
     },
     Cart:{
-      height: "auto",
       paddingHorizontal: 20,
       alignItems: "center",
       justifyContent: "center",
       backgroundColor: "#000",
-      paddingBottom: 90,
     },
     Cart__View: {
       alignItems: "center",
@@ -54,11 +52,12 @@ const styles = StyleSheet.create({
       textAlign: "center",
     },
     View__Pressable:{
-      width: "100%",
+      width: 150,
       height: 50,
       alignItems: "center",
       justifyContent: "center",
       backgroundColor: "#fff",
+      borderRadius: 10,
     },
     Pressable__Text:{
       fontSize: 24,

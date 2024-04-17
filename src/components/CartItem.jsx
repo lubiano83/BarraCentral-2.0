@@ -35,9 +35,9 @@ const styles = StyleSheet.create({
   CartItem__View: {
     width: "70%",
     flexDirection: "column",
-    alignItems: "flex-end",
+    alignItems: "center",
     justifyContent: "center",
-    paddingRight: 20,
+    paddingHorizontal: 20,
     gap: 5,
   },
   View__Title: {
