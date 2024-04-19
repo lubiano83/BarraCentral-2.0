@@ -4,12 +4,14 @@ import { View, StyleSheet, Image, Text, ScrollView } from "react-native";
 import products from "../data/products.json";
 import { useState, useEffect } from "react";
 import Header from "../components/Header";
-import Agregar from "../components/Agregar";
+import Counter from "../components/Counter";
+import { useSelector } from 'react-redux';
 
 const ItemDetail = ({ route, navigation }) => {
 
   const [product, setProduct] = useState(null);
   const {productId} = route.params
+  const count = useSelector(state => state.counterReducer.value);
 
   useEffect(() => {
     //Encontrar el producto por su id
@@ -32,7 +34,8 @@ const ItemDetail = ({ route, navigation }) => {
               <Text style={styles.Text}>Descripción: {product.description}</Text>
             <Text style={styles.Text__Price}>Price: ${product.price}</Text>
           </View>
-          <Agregar />
+          <Counter count={count} />
+          <Text style={styles.ItemDetail__total}>Total: ${product.price * count}</Text>
         </ScrollView>
       ) : null}
     </>
@@ -44,6 +47,13 @@ const styles = StyleSheet.create({
       height: "100%",
       alignContent: "center",
       backgroundColor: "#000",
+    },
+    ItemDetail__total: {
+      marginTop: 20,
+      color: "#fff",
+      fontSize: 24,
+      fontWeight: "bold",
+      textAlign: "center",
     },
     ItemDetail__Image: {
       alignItems: "center",

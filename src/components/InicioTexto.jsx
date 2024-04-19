@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
         textAlign: "center",
         marginHorizontal: 10,
         position: "absolute",
-        bottom: 2,
+        bottom: 5,
         fontWeight: "bold",
     },
 }); 

@@ -29,5 +29,6 @@ const styles = StyleSheet.create({
       paddingVertical: 10,
       paddingHorizontal: 20,
       textTransform: "uppercase",
+      marginBottom: 10,
     },
 });

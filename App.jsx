@@ -3,14 +3,18 @@
 import { StyleSheet, SafeAreaView, Platform, StatusBar } from "react-native";
 import { NavigationContainer } from '@react-navigation/native';
 import BottomTab from "./src/navigation/BottomTab";
+import { Provider } from "react-redux";
+import store from "./src/store/index";
 
 export default function App() {
 
   return (
     <SafeAreaView style={styles.App}>
-      <NavigationContainer>
-        <BottomTab />
-      </NavigationContainer>
+       <Provider store={store}>
+        <NavigationContainer>
+          <BottomTab />
+        </NavigationContainer>
+      </Provider>
     </SafeAreaView>
   );
 }
