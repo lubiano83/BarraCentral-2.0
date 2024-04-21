@@ -11,9 +11,4 @@ const ArrowBack = ({navigation}) => {
   )
 }; export default ArrowBack;
 
-const styles = StyleSheet.create({
-  Back: {
-    position: "absolute",
-    left: 20,
-  },
-});
+const styles = StyleSheet.create({});

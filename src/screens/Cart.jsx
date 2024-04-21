@@ -3,7 +3,7 @@
 import { View, StyleSheet, FlatList, Text, Pressable } from 'react-native';
 import CartData from "../data/cart.json";
 import CartItem from '../components/CartItem';
-import Titulo from '../components/Titulo';
+import Header from '../components/Header';
 
 const Cart = () => {
 
@@ -11,7 +11,7 @@ const Cart = () => {
 
   return (
     <View style={styles.View__Cart}>
-        <Titulo title="Cart" />
+        <Header title="Cart" style={styles.Cart__Header}/>
         <View style={styles.Cart}>
             <FlatList data={CartData} keyExtractor={cartItem => cartItem.id} renderItem={({item}) => <CartItem cartItem={item} /> } />
         </View>
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
       paddingHorizontal: 20,
       alignItems: "center",
       justifyContent: "center",
-      backgroundColor: "#000",
+      paddingTop: 15,
     },
     Cart__View: {
       alignItems: "center",

@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     borderRadius: 10,
     overflow: 'hidden',
-    height: "auto"
+    height: "auto",
   },
   Pressable__Image: {
     width: "30%",

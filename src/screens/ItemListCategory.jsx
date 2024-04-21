@@ -40,8 +40,10 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         backgroundColor: "#000",
         height: "100%",
+        paddingBottom: 140,
     },
     ItemListCategory__TextInput: {
+        marginTop: 15,
         width: "100%",
         height: 50,
         backgroundColor: "#fff",

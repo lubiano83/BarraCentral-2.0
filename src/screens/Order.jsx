@@ -3,12 +3,12 @@
 import { View, StyleSheet, FlatList } from 'react-native';
 import OrderData from "../data/orders.json";
 import OrderItem from '../components/OrderItem';
-import Titulo from '../components/Titulo';
+import Header from '../components/Header';
 
 const Order = () => {
   return (
     <View style={styles.View__Order}>
-        <Titulo title="Orders"/>
+        <Header title="Orders"/>
         <View style={styles.Order}>
             <FlatList data={OrderData} KeyExtractor={orderItem => orderItem.id} renderItem={({item}) => <OrderItem orderItem={item} /> } />
         </View>
@@ -32,6 +32,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#000",
         overflow: "hidden",
         paddingHorizontal: 20,
+        paddingTop: 15,
 
     },
 });

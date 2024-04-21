@@ -25,8 +25,8 @@ const styles = StyleSheet.create({
     borderColor: "#fff",
     borderRadius: 10,
     overflow: 'hidden',
-    backgroundColor: "#fff",
     marginBottom: 15,
+    backgroundColor: "#fff",
   },
   CartItem__Image: {
     width: "30%",
