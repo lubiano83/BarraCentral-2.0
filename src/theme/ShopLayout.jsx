@@ -3,7 +3,7 @@
 import { View, StyleSheet, Text } from 'react-native';
 import { useSelector } from 'react-redux';
 
-const HomeLayout = ({children}) => {
+const ShopLayout = ({children}) => {
 
     const isDark = useSelector(state => state.globalReducer.value.darkMode)
     const backgroundColor = isDark ? "#fff" : "#000";
@@ -13,7 +13,7 @@ const HomeLayout = ({children}) => {
       {children}
     </View>
   )
-}; export default HomeLayout;
+}; export default ShopLayout;
 
 const styles = StyleSheet.create({
     Home: {

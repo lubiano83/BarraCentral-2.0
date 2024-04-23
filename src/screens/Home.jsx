@@ -4,18 +4,18 @@ import { FlatList, View, StyleSheet } from 'react-native';
 import categories from "../data/categories.json";
 import CategoryItem from "../components/CategoryItem";
 import Header from '../components/Header';
-import HomeLayout from '../Layout/HomeLayout';
+import ShopLayout from '../theme/ShopLayout';
 
 const Home = ({ navigation }) => {
   
   return (
     <>
       <Header title="Categories" navigation={navigation} />
-      <HomeLayout style={styles.Home}>
+      <ShopLayout style={styles.Home}>
           <View style={styles.Home__View}>
           </View>
           <FlatList showsVerticalScrollIndicator={false} keyExtractor={elemntoDeMiArray => elemntoDeMiArray} data={categories} renderItem={({item}) => <CategoryItem navigation={navigation} category={item} /> } />
-      </HomeLayout>
+      </ShopLayout>
     </>
   )
 }; export default Home;
