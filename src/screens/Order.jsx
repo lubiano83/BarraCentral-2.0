@@ -33,6 +33,5 @@ const styles = StyleSheet.create({
         overflow: "hidden",
         paddingHorizontal: 20,
         paddingTop: 15,
-
     },
 });

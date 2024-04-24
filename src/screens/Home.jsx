@@ -1,7 +1,6 @@
 /* ItemListContainer */
 
 import { FlatList, View, StyleSheet } from 'react-native';
-// import categories from "../data/categories.json";
 import CategoryItem from "../components/CategoryItem";
 import Header from '../components/Header';
 import HomeLayout from '../themes/HomeLayout';

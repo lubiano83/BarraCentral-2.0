@@ -1,7 +1,6 @@
 /* Cart */
 
 import { View, StyleSheet, FlatList, Text, Pressable } from 'react-native';
-// import CartData from "../data/cart.json";
 import CartItem from '../components/CartItem';
 import Titulo from '../components/Titulo';
 import { useSelector } from 'react-redux';
@@ -19,7 +18,7 @@ const Cart = () => {
         </View>
         <View style={styles.Cart__View}>
             <Text style={styles.View__Text}>Total: ${total}</Text>
-            <Pressable style={styles.View__Pressable}>
+            <Pressable style={styles.View__Pressable} onPress={removeCartItem}>
                 <Text style={styles.Pressable__Text}>Buy</Text>
             </Pressable>
         </View>
