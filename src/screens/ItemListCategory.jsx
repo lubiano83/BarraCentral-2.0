@@ -1,7 +1,6 @@
 /* ItemListCategory */
 
 import { View, StyleSheet, FlatList, TextInput } from 'react-native';
-// import products from "../data/products.json";
 import ProductItem from '../components/ProductItem';
 import { useEffect, useState } from 'react';
 import Header from '../components/Header';

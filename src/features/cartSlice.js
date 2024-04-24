@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
+import { useState } from "react"
 
 export const cartSlice = createSlice({
 
@@ -52,12 +53,7 @@ export const cartSlice = createSlice({
             }
         },
         removeCartItem: (state, { payload }) => {
-            const deleteProducts = state.value.items.filter(item => item.id !== id)
-            const total = deleteProducts.reduce(
-                (acc, currentItem) =>
-                    (acc -= currentItem.quantity),
-                0
-            )
+            // logica para eliminar productos
         },
     },
 })
