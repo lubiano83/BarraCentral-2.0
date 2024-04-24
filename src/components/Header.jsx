@@ -4,7 +4,7 @@ import { View, StyleSheet } from 'react-native';
 import Titulo from './Titulo';
 import ArrowBack from './ArrowBack';
 import { useState } from 'react';
-import SwitchLight from './switchLight';
+import SwitchLight from './SwitchLight';
 import { useDispatch } from 'react-redux';
 import { setDarkMode } from '../features/globalSlice';
 
@@ -17,8 +17,6 @@ const Header = ({ title, navigation }) => {
     setIsEnabled(initialState =>!initialState);
     dispatch(setDarkMode(!isEnabled));
   };
-
-  console.log(isEnabled);
 
   return (
     <View style={styles.Header}>
@@ -37,7 +35,7 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         paddingLeft: 20,
         paddingRight: 20,
-        backgroundColor: "#FFC94A",
+        backgroundColor: "#000",
     },
     
 });

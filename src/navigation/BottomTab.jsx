@@ -58,8 +58,4 @@ const BottomTab = () => {
   )
 }; export default BottomTab;
 
-const styles = StyleSheet.create({
-  tabBar: {
-    
-  },
-});
+const styles = StyleSheet.create({});

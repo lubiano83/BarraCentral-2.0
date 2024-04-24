@@ -1,10 +1,11 @@
 /* ItemListCategory */
 
 import { View, StyleSheet, FlatList, TextInput } from 'react-native';
-import products from "../data/products.json";
+// import products from "../data/products.json";
 import ProductItem from '../components/ProductItem';
 import { useEffect, useState } from 'react';
 import Header from '../components/Header';
+import { useGetProductsByCategoryQuery } from '../services/shopService';
 
 const ItemListCategory = ({ navigation, route }) => {
 
@@ -12,18 +13,22 @@ const ItemListCategory = ({ navigation, route }) => {
     const [productsFiltered, setProductsFiltered] = useState([]);
     const {category} = route.params
 
+    const {data: productsFetched, error, isLoading} = useGetProductsByCategoryQuery(category);
+
     useEffect(() => {
-        // Products filtered by category
-        const productsPrefiltered = products.filter(product => product.category === category);
-        console.log(productsPrefiltered);
-        // Products filtered by name
-        const productsFilter = productsPrefiltered.filter(product => product.title.toLocaleLowerCase().includes(keyword.toLocaleLowerCase()));
-        setProductsFiltered(productsFilter);
-    }, [keyword, category]);
+        if(!isLoading) {
+            // Products filtered by category
+            const productsPrefiltered = productsFetched.filter(product => product.category === category);
+            console.log(productsPrefiltered);
+            // Products filtered by name
+            const productsFilter = productsPrefiltered.filter(product => product.title.toLocaleLowerCase().includes(keyword.toLocaleLowerCase()));
+            setProductsFiltered(productsFilter);
+        }
+    }, [keyword, category, productsFetched, isLoading]);
 
     return (
         <View style={styles.container__ItemListCategory}>
-            <Header title={category} navigation={navigation}/>
+            <Header title={category} navigation={navigation} />
             <View style={styles.ItemListCategory}>
                 <TextInput style={styles.ItemListCategory__TextInput} placeholder='Search...' value={keyword} onChangeText={setKeyword} />
                 <FlatList data={productsFiltered} renderItem={({item}) => <ProductItem product={item} navigation={navigation} /> } keyExtractor={product => product.id} />

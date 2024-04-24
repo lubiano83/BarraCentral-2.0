@@ -3,7 +3,7 @@
 import { View, StyleSheet, Text } from 'react-native';
 import { useSelector } from 'react-redux';
 
-const ShopLayout = ({children}) => {
+const HomeLayout = ({children}) => {
 
     const isDark = useSelector(state => state.globalReducer.value.darkMode)
     const backgroundColor = isDark ? "#fff" : "#000";
@@ -13,13 +13,13 @@ const ShopLayout = ({children}) => {
       {children}
     </View>
   )
-}; export default ShopLayout;
+}; export default HomeLayout;
 
 const styles = StyleSheet.create({
     Home: {
         width: "100%",
         alignItems: 'center',
-        justifyContent: 'center',
+        // justifyContent: 'center',
         paddingHorizontal: 20,
         height: "100%",
         gap: 15,

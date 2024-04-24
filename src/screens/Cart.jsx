@@ -1,22 +1,24 @@
 /* Cart */
 
 import { View, StyleSheet, FlatList, Text, Pressable } from 'react-native';
-import CartData from "../data/cart.json";
+// import CartData from "../data/cart.json";
 import CartItem from '../components/CartItem';
-import Header from '../components/Header';
+import Titulo from '../components/Titulo';
+import { useSelector } from 'react-redux';
+import {removeCartItem} from "../features/cartSlice";
 
 const Cart = () => {
 
-    const TOTAL = CartData.reduce((acc, currentItem) => acc += currentItem.price * currentItem.quantity, 0);
+    const {items: CartData, total} = useSelector(state => state.cartReducer.value);
 
   return (
     <View style={styles.View__Cart}>
-        <Header title="Cart" style={styles.Cart__Header}/>
+        <Titulo title="Carrito" style={styles.Cart__Header}/>
         <View style={styles.Cart}>
             <FlatList data={CartData} keyExtractor={cartItem => cartItem.id} renderItem={({item}) => <CartItem cartItem={item} /> } />
         </View>
         <View style={styles.Cart__View}>
-            <Text style={styles.View__Text}>Total: ${TOTAL}</Text>
+            <Text style={styles.View__Text}>Total: ${total}</Text>
             <Pressable style={styles.View__Pressable}>
                 <Text style={styles.Pressable__Text}>Buy</Text>
             </Pressable>

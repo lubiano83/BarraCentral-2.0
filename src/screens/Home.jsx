@@ -1,21 +1,24 @@
 /* ItemListContainer */
 
 import { FlatList, View, StyleSheet } from 'react-native';
-import categories from "../data/categories.json";
+// import categories from "../data/categories.json";
 import CategoryItem from "../components/CategoryItem";
 import Header from '../components/Header';
-import ShopLayout from '../theme/ShopLayout';
+import HomeLayout from '../themes/HomeLayout';
+import { useGetCategoriesQuery } from '../services/shopService';
 
 const Home = ({ navigation }) => {
+
+  const {data: categories, error, isLoading} = useGetCategoriesQuery();
   
   return (
     <>
       <Header title="Categories" navigation={navigation} />
-      <ShopLayout style={styles.Home}>
+      <HomeLayout style={styles.Home}>
           <View style={styles.Home__View}>
           </View>
           <FlatList showsVerticalScrollIndicator={false} keyExtractor={elemntoDeMiArray => elemntoDeMiArray} data={categories} renderItem={({item}) => <CategoryItem navigation={navigation} category={item} /> } />
-      </ShopLayout>
+      </HomeLayout>
     </>
   )
 }; export default Home;
@@ -24,7 +27,7 @@ const styles = StyleSheet.create({
     Home: {
         width: "100%",
         alignItems: 'center',
-        justifyContent: 'center',
+        // justifyContent: 'center',
         paddingHorizontal: 20,
         height: "100%",
         gap: 15,

@@ -1,14 +1,20 @@
 /* CartItem */
 
-import { View, StyleSheet, Image, Text } from 'react-native';
+import { View, StyleSheet, Image, Text, Pressable } from 'react-native';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 const CartItem = ({cartItem}) => {
   return (
     <View style={styles.CartItem}>
         <Image style={styles.CartItem__Image} source={{uri: cartItem.image}} />
         <View style={styles.CartItem__View}>
+          <View style={styles.View__Container}>
             <Text style={styles.View__Title}>{cartItem.title}</Text>
             <Text style={styles.View__Price}>({cartItem.quantity}) ${cartItem.price * cartItem.quantity}</Text>
+          </View>
+          <Pressable>
+            <FontAwesome5 name="trash" size={36} color="black" />
+          </Pressable>
         </View>
     </View>
   )
@@ -34,11 +40,15 @@ const styles = StyleSheet.create({
   },
   CartItem__View: {
     width: "70%",
-    flexDirection: "column",
+    flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "flex-end",
     paddingHorizontal: 20,
-    gap: 5,
+    gap: 20,
+  },
+  View__Container:{
+    width: "90%",
+    gap: 10,
   },
   View__Title: {
     fontSize: 20,

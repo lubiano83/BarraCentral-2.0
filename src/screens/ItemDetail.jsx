@@ -1,25 +1,22 @@
 /* ItemDetail */
 
 import { View, StyleSheet, Image, Text, ScrollView } from "react-native";
-import products from "../data/products.json";
-import { useState, useEffect } from "react";
 import Header from "../components/Header";
 import Counter from "../components/Counter";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useGetProductsByIdQuery } from "../services/shopService";
+import { addCartItem } from "../features/cartSlice";
 
 const ItemDetail = ({ route, navigation }) => {
 
-  const [product, setProduct] = useState(null);
   const {productId} = route.params
   const count = useSelector(state => state.counterReducer.value);
+  const dispatch = useDispatch();
+  const {data: product, error, isLoading} = useGetProductsByIdQuery(productId);
 
-  useEffect(() => {
-    //Encontrar el producto por su id
-    const productSelected = products.find(
-      (product) => product.id === productId
-    )
-    setProduct(productSelected)
-  }, [productId])
+  const handleAddCart = () => {
+    dispatch(addCartItem({...product, quantity: count}))
+  }
 
   return (
     <>
@@ -34,7 +31,7 @@ const ItemDetail = ({ route, navigation }) => {
               <Text style={styles.Text}>Descripción: {product.description}</Text>
             <Text style={styles.Text__Price}>Price: ${product.price}</Text>
           </View>
-          <Counter count={count} />
+          <Counter count={count} handleAddCart={handleAddCart}/>
           <Text style={styles.ItemDetail__total}>Total: ${product.price * count}</Text>
         </ScrollView>
       ) : null}
@@ -71,7 +68,6 @@ const styles = StyleSheet.create({
     Text: {
       fontSize: 16,
       color: "#fff",
-      overflow: "scroll",
     },
     Text__Price: {
       width: "100%",
