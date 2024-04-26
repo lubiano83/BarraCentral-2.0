@@ -1,19 +1,16 @@
 /* BarraCentral */
 
 import { StyleSheet, SafeAreaView, Platform, StatusBar } from "react-native";
-import { NavigationContainer } from '@react-navigation/native';
-import BottomTab from "./src/navigation/BottomTab";
 import { Provider } from "react-redux";
 import store from "./src/store/index";
+import Navigator from "./src/navigation/Navigator";
 
 export default function App() {
 
   return (
     <SafeAreaView style={styles.App}>
-       <Provider store={store}>
-        <NavigationContainer>
-          <BottomTab />
-        </NavigationContainer>
+      <Provider store={store}>
+        <Navigator />
       </Provider>
     </SafeAreaView>
   );

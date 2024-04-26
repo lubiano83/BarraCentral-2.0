@@ -10,7 +10,7 @@ const Inicio = ({ navigation }) => {
     return (
         <ImageBackground style={styles.Inicio} source={require("../img/barra-central.webp")}>
             <View style={styles.Inicio__Mail}>
-                <InicioMail />
+            <InicioMail />
             </View>
             <View style={styles.Inicio__container}>
                 <InicioCarta navigation={navigation} />
@@ -33,6 +33,10 @@ const styles = StyleSheet.create({
         position: "absolute",
         top: 20,
         right: 30,
+    },
+    Inicio__container: {
+        position: "absolute",
+        gap: -35,
     },
 });
   

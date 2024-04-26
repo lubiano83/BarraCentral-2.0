@@ -6,6 +6,7 @@ import OrderItem from '../components/OrderItem';
 import Titulo from '../components/Titulo';
 
 const Order = () => {
+
   return (
     <View style={styles.View__Order}>
         <Titulo title="Orders"/>

@@ -4,21 +4,28 @@ import { View, StyleSheet, FlatList, Text, Pressable } from 'react-native';
 import CartItem from '../components/CartItem';
 import Titulo from '../components/Titulo';
 import { useSelector } from 'react-redux';
-import {removeCartItem} from "../features/cartSlice";
+import { usePostOrderMutation } from '../services/shopService';
 
 const Cart = () => {
 
     const {items: CartData, total} = useSelector(state => state.cartReducer.value);
+    const [triggerPostOrder, result] = usePostOrderMutation();
+
+    const onConfirmOrder = () => {
+      triggerPostOrder({items: CartData, user: "Rafael", total});
+    }
+
+    console.log(result);
 
   return (
     <View style={styles.View__Cart}>
-        <Titulo title="Carrito" style={styles.Cart__Header}/>
+        <Titulo title="Carrito" style={styles.Cart__Header} />
         <View style={styles.Cart}>
             <FlatList data={CartData} keyExtractor={cartItem => cartItem.id} renderItem={({item}) => <CartItem cartItem={item} /> } />
         </View>
         <View style={styles.Cart__View}>
             <Text style={styles.View__Text}>Total: ${total}</Text>
-            <Pressable style={styles.View__Pressable} onPress={removeCartItem}>
+            <Pressable style={styles.View__Pressable} onPress={onConfirmOrder}>
                 <Text style={styles.Pressable__Text}>Buy</Text>
             </Pressable>
         </View>

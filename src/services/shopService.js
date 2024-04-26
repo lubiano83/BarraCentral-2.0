@@ -25,6 +25,13 @@ export const shopApi = createApi({
                 if(responseTransformed.length) return responseTransformed[0]
                 return null
             }
-        })
+        }),
+        postOrder: builder.mutation({
+            query: ({...order}) => ({
+                url: "orders.json",
+                method: "POST",
+                body: order,
+            })
+        }),
     })
-}); export const {useGetCategoriesQuery, useGetProductsByIdQuery, useGetProductsByCategoryQuery} = shopApi;
+}); export const {useGetCategoriesQuery, useGetProductsByIdQuery, useGetProductsByCategoryQuery, usePostOrderMutation} = shopApi;
