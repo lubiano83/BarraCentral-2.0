@@ -13,8 +13,8 @@ const Inicio = ({ navigation }) => {
                 <InicioMail />
             </View>
             <View style={styles.Inicio__container}>
-                <InicioAyuda ayuda="Ayuda" />
                 <InicioCarta navigation={navigation} />
+                <InicioAyuda ayuda="Ayuda" />
             </View>
             <InicioTexto />
         </ImageBackground>
@@ -33,14 +33,6 @@ const styles = StyleSheet.create({
         position: "absolute",
         top: 20,
         right: 30,
-    },
-    Inicio__container: {
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent:"center",
-        position: "absolute",
-        gap: -60,
-        bottom: 65,
     },
 });
   
