@@ -2,7 +2,7 @@
 
 import { Pressable, Text, View, StyleSheet } from 'react-native';
 import { useDispatch } from 'react-redux';
-import { increment, decrement, reset, addTo } from "../features/counterSlice";
+import { increment, decrement, reset } from "../features/counterSlice";
 import { AntDesign } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 
@@ -25,9 +25,6 @@ const Counter = ({count, handleAddCart}) => {
             </Pressable>
         </View>
         <View style={styles.Counter__container}>
-            {/* <Pressable style={styles.container__Button} onPress={() => dispatch(reset())}>
-                <Text style={styles.Button__Text}>Reset</Text>
-            </Pressable> */}
             <Pressable style={styles.container__Button}>
                 <Text style={styles.Button__Tex2} onPress={handleAddCart}>Agregar</Text>
             </Pressable>

@@ -1,3 +1,5 @@
+/* SignupScreen */
+
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
@@ -11,8 +13,8 @@ const SignupScreen = ({ navigation }) => {
     const [email, setEmail] = useState("");
     const [errorMail, setErrorMail] = useState("");
     const [password, setPassword] = useState("");
-    const [errorPassword, setErrorPassword] = useState("")
-    const [confirmPassword, setconfirmPassword] = useState("");
+    const [errorPassword, setErrorPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
     const [errorConfirmPassword, setErrorConfirmPassword] = useState("");
 
     const dispatch = useDispatch();
@@ -63,7 +65,7 @@ const SignupScreen = ({ navigation }) => {
                 <Text style={styles.title}>Signup</Text>
                 <InputForm label={"Email:"} onChange={setEmail} error={errorMail} />
                 <InputForm label={"Password:"} onChange={setPassword} error={errorPassword} isSecure={true} />
-                <InputForm label={"Confirm Password:"} onChange={setconfirmPassword} error={errorConfirmPassword} isSecure={true} />
+                <InputForm label={"Confirm Password:"} onChange={setConfirmPassword} error={errorConfirmPassword} isSecure={true} />
                 <SubmitButton onPress={onSubmit} title="Send" />
                 <Text style={styles.sub}>Already have an account?</Text>
                 <Pressable style={styles.Boton__subLink} onPress={() => navigation.navigate("Login")}>

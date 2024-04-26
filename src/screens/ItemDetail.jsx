@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import Counter from "../components/Counter";
 import { useDispatch, useSelector } from 'react-redux';
 import { useGetProductsByIdQuery } from "../services/shopService";
-import { addCartItem } from "../features/cartSlice";
+import { addCartItem, reset } from "../features/cartSlice";
 
 const ItemDetail = ({ route, navigation }) => {
 

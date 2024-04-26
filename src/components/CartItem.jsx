@@ -2,8 +2,17 @@
 
 import { View, StyleSheet, Image, Text, Pressable } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
+import { removeCartItem } from "../features/cartSlice";
+import { useDispatch } from 'react-redux';
 
 const CartItem = ({cartItem}) => {
+
+  dispatch = useDispatch();
+
+  const handleRemoveCart = () => {
+    dispatch(removeCartItem({ id: cartItem.id }));
+  }
+
   return (
     <View style={styles.CartItem}>
         <Image style={styles.CartItem__Image} source={{uri: cartItem.image}} />
@@ -12,7 +21,7 @@ const CartItem = ({cartItem}) => {
             <Text style={styles.View__Title}>{cartItem.title}</Text>
             <Text style={styles.View__Price}>({cartItem.quantity}) ${cartItem.price * cartItem.quantity}</Text>
           </View>
-          <Pressable>
+          <Pressable onPress={handleRemoveCart}>
             <FontAwesome5 name="trash" size={36} color="black" />
           </Pressable>
         </View>

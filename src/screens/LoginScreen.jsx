@@ -7,6 +7,7 @@ import SubmitButton from '../components/SubmitButton';
 import { useSignInMutation } from '../services/authService';
 import { useDispatch } from 'react-redux';
 import { setUser } from "../features/userSlice";
+import { loginSchema } from "../validations/authSchema";
 
 const LoginScreen = ({navigation}) => {
 
@@ -14,7 +15,9 @@ const LoginScreen = ({navigation}) => {
     const [triggerSignIn, result] = useSignInMutation();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
-
+    const [errorMail, setErrorMail] = useState("");
+    const [errorPassword, setErrorPassword] = useState("");
+   
     useEffect(()=> {
         if (result.isSuccess) {
             console.log("muestrame el resultado: ", result)
@@ -28,27 +31,35 @@ const LoginScreen = ({navigation}) => {
     }, [result])
 
     const onSubmit = () => {
-        triggerSignIn({email, password});
+        try {
+            setErrorMail("")
+            setErrorPassword("")
+            const validation = loginSchema.validateSync({email, password})
+            triggerSignIn({email, password});
+        } catch (err) {
+            console.log("Entro al signup el error");
+            console.log(err.path)
+            console.log(err.message)
+            switch(err.path){
+                case "email":
+                    setErrorMail(err.message)
+                    break;
+                case "password":
+                    setErrorPassword(err.message)
+                    break;
+                default:
+                    break;
+            }
+        }
     }
+    
   return (
     <View style={styles.main}>
         <View style={styles.container}>
             <Text style={styles.title}>Login</Text>
-            <InputForm
-                label={"Email:"}
-                onChange={setEmail}
-                error={""}
-            />
-            <InputForm 
-                label={"Password:"}
-                onChange={setPassword}
-                error={""}
-                isSecure={true}
-            />
-            <SubmitButton 
-                onPress={onSubmit}
-                title = "Send"
-            />
+            <InputForm label={"Email:"} onChange={setEmail} error={errorMail} />
+            <InputForm label={"Password:"} onChange={setPassword} error={errorPassword} isSecure={true} />
+            <SubmitButton onPress={onSubmit} title = "Send" />
             <Text style={styles.sub}>Not have an account?</Text>
             <Pressable style={styles.Boton__subLink} onPress={()=> navigation.navigate('Signup')}>
                 <Text style={styles.subLink}>Sign up</Text>
