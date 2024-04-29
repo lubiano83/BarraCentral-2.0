@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
       fontSize: 24,
       fontWeight: "bold",
       textAlign: "center",
+      paddingBottom: 20,
     },
     ItemDetail__Image: {
       alignItems: "center",

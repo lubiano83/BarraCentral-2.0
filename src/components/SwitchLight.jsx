@@ -19,4 +19,9 @@ const SwitchLight = ({ isEnabled = true, setIsEnabled = () => {} }) => {
     )
 }; export default SwitchLight;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    SwitchLight: {
+        position: "absolute",
+        right: 20,
+    },
+});

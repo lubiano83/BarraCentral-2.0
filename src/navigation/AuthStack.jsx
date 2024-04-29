@@ -16,4 +16,4 @@ const AuthStack = () => {
     )
 }; export default AuthStack;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});

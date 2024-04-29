@@ -5,6 +5,7 @@ import CartItem from '../components/CartItem';
 import Titulo from '../components/Titulo';
 import { useSelector } from 'react-redux';
 import { usePostOrderMutation } from '../services/shopService';
+import SwitchLight from '../components/SwitchLight';
 
 const Cart = () => {
 
@@ -12,14 +13,27 @@ const Cart = () => {
     const [triggerPostOrder, result] = usePostOrderMutation();
 
     const onConfirmOrder = () => {
-      triggerPostOrder({items: CartData, user: "Rafael", total});
-    }
-
-    console.log(result);
+      try {
+          const codigoIngresado = "123456" // aqui va el modo foto para scanear codigo QR
+          // Verificar si el código ingresado coincide con el código secreto fijo
+          if (codigoIngresado === "123456") {
+              triggerPostOrder({items: CartData, user: "Rafael", total});
+              alert("¡Pedido confirmado y enviado!");s
+          } else {
+              throw new Error("Código incorrecto. No se puede confirmar el pedido.");
+          }
+      } catch (error) {
+          console.error("Error al confirmar el pedido:", error.message);
+      }
+  };
 
   return (
     <View style={styles.View__Cart}>
-        <Titulo title="Carrito" style={styles.Cart__Header} />
+        <View style={styles.Header}>
+          <View></View>
+          <Titulo title="Carrito" style={styles.Cart__Header} />
+          <SwitchLight style={styles.SwitchLight}/>
+        </View>
         <View style={styles.Cart}>
             <FlatList data={CartData} keyExtractor={cartItem => cartItem.id} renderItem={({item}) => <CartItem cartItem={item} /> } />
         </View>
@@ -41,6 +55,15 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: "space-between",
       backgroundColor: "#000",
+    },
+    Header: {
+      backgroundColor: "brown",
+      width: "100%",
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "center",
+      height: "auto",
+      paddingHorizontal: 20,
     },
     Cart:{
       paddingHorizontal: 20,

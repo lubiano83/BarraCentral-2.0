@@ -12,8 +12,8 @@ const Navigator = () => {
 
   return (
     <NavigationContainer>
-        {/* { user ? <BottomTab /> : <AuthStack /> } */}
-        <BottomTab />
+        { user ? <BottomTab /> : <AuthStack /> }
+        {/* <BottomTab /> */}
     </NavigationContainer>
   )
 }; export default Navigator;

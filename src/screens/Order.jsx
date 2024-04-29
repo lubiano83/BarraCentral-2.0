@@ -4,12 +4,16 @@ import { View, StyleSheet, FlatList } from 'react-native';
 import OrderData from "../data/orders.json";
 import OrderItem from '../components/OrderItem';
 import Titulo from '../components/Titulo';
+import SwitchLight from "../components/SwitchLight"
 
 const Order = () => {
 
   return (
     <View style={styles.View__Order}>
-        <Titulo title="Orders"/>
+        <View style={styles.Header}>
+            <Titulo title="Orders"/>
+            <SwitchLight />
+        </View>
         <View style={styles.Order}>
             <FlatList data={OrderData} KeyExtractor={orderItem => orderItem.id} renderItem={({item}) => <OrderItem orderItem={item} /> } />
         </View>
@@ -24,6 +28,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: "space-between",
         backgroundColor: "#000",
+    },
+    Header: {
+        width: "100%",
+        height: "auto",
+        backgroundColor: "brown",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "row",
     },
     Order: {
         width: "100%",
