@@ -56,10 +56,7 @@ const BottomTab = () => {
                     },
                 }}
             />
-            <Tab.Screen 
-                name="My profile"
-                component={MyProfileStack}
-                options={{
+            <Tab.Screen name="My profile" component={MyProfileStack} options={{
                     tabBarIcon: ({ focused }) => {
                         return (
                             <View>

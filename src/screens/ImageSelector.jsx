@@ -10,11 +10,11 @@ import { usePostProfileImageMutation } from "../services/shopService";
 
 const ImageSelector = ({ navigation }) => {
     const [image, setImage] = useState(null);
-    const [triggerPostImage, result] = usePostProfileImageMutation();
-    const { localId } = useSelector(state => state.authReducer.value);
+    const [triggerPostImage, result] = usePostProfileImageMutation(); // si es mutation se llama en forma de array
+    const {localId} = useSelector(state => state.authReducer.value);
     const dispatch = useDispatch();
 
-    console.log(localId);
+    console.log("localId en ImageSelector: "+localId);
 
     const verifyCameraPermissions = async () => {
         const {granted} = await ImagePicker.requestCameraPermissionsAsync();

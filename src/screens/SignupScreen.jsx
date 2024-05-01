@@ -37,6 +37,7 @@ const SignupScreen = ({ navigation }) => {
         try {
             setErrorMail("")
             setErrorPassword("")
+            setErrorConfirmPassword("")
             const validation = signupSchema.validateSync({email, password, confirmPassword})
             triggerSignUp({email, password, returnSecureToken: true});
         } catch (err) {

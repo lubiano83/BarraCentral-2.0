@@ -14,6 +14,8 @@ const MyProfile = ({navigation}) => {
         navigation.navigate('Image selector')
     };
 
+    console.log("localId en MyProfile: "+localId);
+
     const defaultImageRoute = "../../assets/images/defaultProfile.png"
 
     return (
