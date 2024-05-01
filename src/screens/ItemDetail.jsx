@@ -4,15 +4,15 @@ import { View, StyleSheet, Image, Text, ScrollView } from "react-native";
 import Header from "../components/Header";
 import Counter from "../components/Counter";
 import { useDispatch, useSelector } from 'react-redux';
-import { useGetProductsByIdQuery } from "../services/shopService";
-import { addCartItem, reset } from "../features/cartSlice";
+import { useGetProductByIdQuery } from "../services/shopService";
+import { addCartItem } from "../features/cartSlice";
 
 const ItemDetail = ({ route, navigation }) => {
 
   const {productId} = route.params
   const count = useSelector(state => state.counterReducer.value);
   const dispatch = useDispatch();
-  const {data: product, error, isLoading} = useGetProductsByIdQuery(productId);
+  const {data: product} = useGetProductByIdQuery(productId);
 
   const handleAddCart = () => {
     dispatch(addCartItem({...product, quantity: count}))

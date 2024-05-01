@@ -8,7 +8,7 @@ import InicioMail from "../components/InicioMail";
 
 const Inicio = ({ navigation }) => {
     return (
-        <ImageBackground style={styles.Inicio} source={require("../img/barra-central.webp")}>
+        <ImageBackground style={styles.Inicio} source={require("../../assets/images/barra-central.webp")}>
             <View style={styles.Inicio__Mail}>
             <InicioMail />
             </View>

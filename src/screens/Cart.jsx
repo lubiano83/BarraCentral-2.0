@@ -9,6 +9,7 @@ import SwitchLight from '../components/SwitchLight';
 
 const Cart = () => {
 
+    const { user } = useSelector(state => state.authReducer.value);
     const {items: CartData, total} = useSelector(state => state.cartReducer.value);
     const [triggerPostOrder, result] = usePostOrderMutation();
 
@@ -17,8 +18,8 @@ const Cart = () => {
           const codigoIngresado = "123456" // aqui va el modo foto para scanear codigo QR
           // Verificar si el código ingresado coincide con el código secreto fijo
           if (codigoIngresado === "123456") {
-              triggerPostOrder({items: CartData, user: "Rafael", total});
-              alert("¡Pedido confirmado y enviado!");s
+              triggerPostOrder({items: CartData, user: user, total}); // la orden esta puesta con el mail de momento
+              return alert("¡Pedido confirmado y enviado!");
           } else {
               throw new Error("Código incorrecto. No se puede confirmar el pedido.");
           }

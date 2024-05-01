@@ -1,37 +1,61 @@
-/* shopService */
-
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { baseUrl } from "../databases/realtimeDatabase";
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
+import { baseUrl } from "../databases/realtimeDatabase"
 
 export const shopApi = createApi({
-    baseQuery: fetchBaseQuery({baseUrl: baseUrl}),
+    reducerPath: "shopApi", //Establish a unique name for the API
+    baseQuery: fetchBaseQuery({ baseUrl: baseUrl }),
+    tagTypes: ['profileImageGet'], //Declare tags
     endpoints: (builder) => ({
         getCategories: builder.query({
-            query: () => `categories.json`
+            query: () => `categories.json`,
         }),
         getProductsByCategory: builder.query({
-            query: (category) => `products.json?orderBy="category"&equalTo="${category}"`,
+            query: (category) =>
+                `products.json?orderBy="category"&equalTo="${category}"`,
             transformResponse: (response) => {
-                // console.log(response);
-                const responseTransformed = Object.values(response);
-                return responseTransformed;
-            }
+                const responseTransformed = Object.values(response)
+                return responseTransformed
+            },
         }),
-        getProductsById: builder.query({
-            query: (productId) => `products.json?orderBy="id"&equalTo=${productId}`,
+        getProductById: builder.query({
+            query: (productId) =>
+                `products.json?orderBy="id"&equalTo=${productId}`,
             transformResponse: (response) => {
-                // console.log(response);
-                const responseTransformed = Object.values(response);
-                if(responseTransformed.length) return responseTransformed[0]
+                const responseTransformed = Object.values(response)
+                if (responseTransformed.length) return responseTransformed[0]
                 return null
-            }
+            },
         }),
         postOrder: builder.mutation({
             query: ({...order}) => ({
-                url: "orders.json",
-                method: "POST",
-                body: order,
+                url: 'orders.json',
+                method: 'POST',
+                body: order
             })
         }),
-    })
-}); export const {useGetCategoriesQuery, useGetProductsByIdQuery, useGetProductsByCategoryQuery, usePostOrderMutation} = shopApi;
+        getProfileImage: builder.query({
+            query: (localId) => `profileImages/${localId}.json`, // la query es para obtener datos
+            providesTags: ['profileImageGet'] // es como un useEffect y el tag es como un array de dependencias, es para que se vuelva a llamar luego de que se llama la primera ves.
+        }),
+        //We make a PUT request for not creating additional key, because de localId is already an unique key.
+        postProfileImage: builder.mutation({
+            query: ({image, localId}) => ({
+                url: `profileImages/${localId}.json`,
+                method: "PUT", // si utilizamos el metodo POST, este nos generara un id unico, el cual no es necesario en este caso.
+                body: {
+                    image: image
+                },
+            }),
+            invalidatesTags: ['profileImageGet'] //Invalidates will trigger a refetch on profileImageGet
+        }),
+    }),
+})
+
+export const {
+    useGetCategoriesQuery,
+    useGetProductsByCategoryQuery,
+    useGetProductByIdQuery,
+    usePostOrderMutation,
+    useGetProfileImageQuery,
+    usePostProfileImageMutation,
+} = shopApi

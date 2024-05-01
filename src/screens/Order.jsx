@@ -4,7 +4,7 @@ import { View, StyleSheet, FlatList } from 'react-native';
 import OrderData from "../data/orders.json";
 import OrderItem from '../components/OrderItem';
 import Titulo from '../components/Titulo';
-import SwitchLight from "../components/SwitchLight"
+import SwitchLight from "../components/SwitchLight";
 
 const Order = () => {
 
