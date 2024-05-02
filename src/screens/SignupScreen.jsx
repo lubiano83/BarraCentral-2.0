@@ -27,7 +27,8 @@ const SignupScreen = ({ navigation }) => {
             dispatch(
                 setUser({
                     email: result.data.email,
-                    idToken: result.data.idToken
+                    idToken: result.data.idToken,
+                    localId: result.data.localId
                 })
             )
         }
