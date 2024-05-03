@@ -32,7 +32,7 @@ const Cart = () => {
     <View style={styles.View__Cart}>
         <View style={styles.Header}>
           <View></View>
-          <Titulo title="Carrito" style={styles.Cart__Header} />
+          <Titulo title="Cart" style={styles.Cart__Header} />
           <SwitchLight style={styles.SwitchLight}/>
         </View>
         <View style={styles.Cart}>

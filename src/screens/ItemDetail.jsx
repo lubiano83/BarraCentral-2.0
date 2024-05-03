@@ -31,7 +31,7 @@ const ItemDetail = ({ route, navigation }) => {
               <Text style={styles.Text}>Descripción: {product.description}</Text>
             <Text style={styles.Text__Price}>Price: ${product.price}</Text>
           </View>
-          <Counter count={count} handleAddCart={handleAddCart}/>
+          <Counter count={count} handleAddCart={handleAddCart} />
           <Text style={styles.ItemDetail__total}>Total: ${product.price * count}</Text>
         </ScrollView>
       ) : null}
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
       backgroundColor: "#000",
     },
     ItemDetail__total: {
-      marginTop: 20,
+      marginTop: 10,
       color: "#fff",
       fontSize: 24,
       fontWeight: "bold",

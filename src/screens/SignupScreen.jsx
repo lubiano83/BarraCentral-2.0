@@ -16,9 +16,7 @@ const SignupScreen = ({ navigation }) => {
     const [errorPassword, setErrorPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [errorConfirmPassword, setErrorConfirmPassword] = useState("");
-
     const dispatch = useDispatch();
-
     const [triggerSignUp, result] = useSignUpMutation();
 
     useEffect(()=> {
