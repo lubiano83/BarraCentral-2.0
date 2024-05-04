@@ -77,6 +77,7 @@ const styles = StyleSheet.create({
       justifyContent: "center",
       width: "100%",
       gap: 10,
+      paddingHorizontal: 20,
     },
     View__Text: {
       color: '#fff',
@@ -84,7 +85,7 @@ const styles = StyleSheet.create({
       textAlign: "center",
     },
     View__Pressable:{
-      width: 150,
+      width: "100%",
       height: 50,
       alignItems: "center",
       justifyContent: "center",

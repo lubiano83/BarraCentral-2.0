@@ -83,5 +83,4 @@ const styles = StyleSheet.create({
       fontWeight: "bold",
       paddingBottom: 10,
     },
-    
 });

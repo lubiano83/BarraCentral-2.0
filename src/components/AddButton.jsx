@@ -21,16 +21,18 @@ export default AddButton;
 
 const styles = StyleSheet.create({
     button: {
-        width: "80%",
+        width: "100%",
+        height: 50,
         borderWidth: 1,
         backgroundColor: "#000",
         justifyContent: "center",
         alignItems: "center",
-        padding: 8,
+        padding: 10,
         borderRadius: 10,
     },
     text: {
-        fontSize: 18,
+        fontSize: 20,
         color: "#000",
+        fontWeight: "bold",
     },
 });

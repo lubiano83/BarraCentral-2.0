@@ -26,7 +26,7 @@ const Counter = ({count, handleAddCart}) => {
         </View>
         <View style={styles.Counter__container}>
             <Pressable style={styles.container__Button}>
-                <Text style={styles.Button__Tex2} onPress={handleAddCart}>Agregar</Text>
+                <Text style={styles.Button__Tex2} onPress={handleAddCart}>Add To Cart</Text>
             </Pressable>
         </View>
     </View>
@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         gap: 20,
+        paddingHorizontal: 20,
     },
     container__numero: {
         color: "#fff",
@@ -50,8 +51,8 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
     },
     container__Button: {
-        width: 90,
-        height: 40,
+        width: "100%",
+        height: 50,
         alignItems: "center",
         justifyContent: "center",
         backgroundColor: "#fff",
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
         color: "#000",
     },
     Button__Tex2: {
-        fontSize: 18,
+        fontSize: 22,
         fontWeight: "bold",
         color: "#000",
     },
