@@ -1,6 +1,6 @@
 /* InputForm */
 
-import { StyleSheet, Text, TextInput, View } from 'react-native';
+import { Text, TextInput, View } from 'react-native';
 import { useState } from 'react';
 
 const InputForm = ({ label, onChange, error = "", isSecure = false }) => {
@@ -12,11 +12,11 @@ const InputForm = ({ label, onChange, error = "", isSecure = false }) => {
     }
 
   return (
-    <View style={styles.inputContainer}>
-      <Text style={styles.subtitle}>{label}</Text>
-      <TextInput style ={styles.input} value={input} onChangeText={onChangeText} secureTextEntry={isSecure} />
+    <View style={{flexDirection: "column", justifyContent: "flex-start", alignItems: "center", width: "100%"}}>
+      <Text style={{width: "90%", fontSize: 16, color: "#fff"}}>{label}</Text>
+      <TextInput style ={{width: "90%", borderWidth: 0, borderBottomWidth: 3, borderBottomColor: "#fff", padding: 2, fontSize: 14, color: "#fff"}} value={input} onChangeText={onChangeText} secureTextEntry={isSecure} />
       {error ? 
-        <Text style = {styles.error}>
+        <Text style = {{paddingTop: 2, fontSize: 16, color: "red", fontStyle: "italic"}}>
             {error}
         </Text>
         :
@@ -24,35 +24,4 @@ const InputForm = ({ label, onChange, error = "", isSecure = false }) => {
     }
     </View>
   )
-}
-
-export default InputForm
-
-const styles = StyleSheet.create({
-    inputContainer: {
-        flexDirection: 'column',
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-        width: '100%'
-    },
-    subtitle: {
-        width: '90%',
-        fontSize: 16,
-        color: "#fff",
-    },
-    error: {
-        paddintTop: 2,
-        fontSize: 16,
-        color: 'red',
-        fontStyle: 'italic',
-    },
-    input: {
-        width: '90%',
-        borderWidth: 0,
-        borderBottomWidth: 3,
-        borderBottomColor: "#fff",
-        padding: 2,
-        fontSize: 14,
-        color: "#fff",
-    }
-})
+}; export default InputForm;

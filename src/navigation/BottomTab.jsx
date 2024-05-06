@@ -1,6 +1,6 @@
 /* BotonStack */
 
-import { StyleSheet, View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import CartStack from './CartStack';
 import { FontAwesome6, FontAwesome5 } from "@expo/vector-icons";

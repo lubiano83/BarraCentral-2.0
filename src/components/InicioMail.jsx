@@ -1,19 +1,12 @@
 /* InicioMail */
 
-import { Pressable, StyleSheet } from 'react-native';
+import { Pressable } from 'react-native';
 import { Zocial } from '@expo/vector-icons';
 
 const InicioMail = () => {
   return (
-    <Pressable style={styles.InicioMail}>
+    <Pressable style={{alignItems: "center", justifyContent: "center"}}>
         <Zocial name="email" size={36} color="#fff" />
     </Pressable>
   )
 }; export default InicioMail;
-
-const styles = StyleSheet.create({
-    InicioMail: {
-        alignItems: "center",
-        justifyContent: "center",
-    },
-});

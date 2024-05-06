@@ -1,23 +1,12 @@
 /* Titulo */
 
-import { Text, StyleSheet } from 'react-native';
+import { Text } from 'react-native';
 
 const Titulo = ({title}) => {
   
   return (
-    <Text style={styles.Titulo}>
+    <Text style={{fontSize: 36, fontWeight: "bold", color: "#fff", textAlign: "center", paddingVertical: 10}}>
         {title}
     </Text>
   )
 }; export default Titulo;
-
-const styles = StyleSheet.create({
-    // Titulo
-    Titulo: {
-        fontSize: 36,
-        fontWeight: 'bold',
-        color: '#fff',
-        textAlign: 'center',
-        paddingVertical: 10,
-    }
-});

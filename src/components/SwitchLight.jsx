@@ -1,13 +1,13 @@
 /* SwitchLight */
 
-import { View, Switch, StyleSheet } from 'react-native';
+import { View, Switch } from 'react-native';
 
 const SwitchLight = ({ isEnabled = true, setIsEnabled = () => {} }) => {
     
     const toggleSwitch = () => setIsEnabled(previusState => !previusState);
 
     return (
-        <View style={styles.SwitchLight}>
+        <View style={{position: "absolute", right: 20}}>
             <Switch 
                 trackcolor={{false: "#fff", true: "#fff"}}
                 thumbColor={isEnabled ? "#fff" : "#fff"}
@@ -18,10 +18,3 @@ const SwitchLight = ({ isEnabled = true, setIsEnabled = () => {} }) => {
         </View>
     )
 }; export default SwitchLight;
-
-const styles = StyleSheet.create({
-    SwitchLight: {
-        position: "absolute",
-        right: 20,
-    },
-});

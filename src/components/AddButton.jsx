@@ -1,38 +1,18 @@
 /* AddButton */
 
-import { Pressable, StyleSheet, Text } from "react-native";
+import { Pressable, Text } from "react-native";
+import {useColors} from "../hooks/useColors";
 
-const AddButton = ({
-    title = "",
-    onPress = () => {},
-    color = "#fff",
-}) => {
+const AddButton = ({ title = "", onPress = () => {}, color = "#fff" }) => {
+
+    const {whiteColor, blackColor} = useColors();
+
     return (
         <Pressable
-            style={{ ...styles.button, backgroundColor: color }}
+            style={{width: "100%", height: 50, borderWidth: 1, backgroundColor: whiteColor, justifyContent: "center", alignItems: "center", padding: 10, borderRadius: 10}}
             onPress={onPress}
         >
-            <Text style={styles.text}>{title}</Text>
+            <Text style={{fontSize: 20, color: blackColor, fontWeight: "bold"}}>{title}</Text>
         </Pressable>
     );
-};
-
-export default AddButton;
-
-const styles = StyleSheet.create({
-    button: {
-        width: "100%",
-        height: 50,
-        borderWidth: 1,
-        backgroundColor: "#000",
-        justifyContent: "center",
-        alignItems: "center",
-        padding: 10,
-        borderRadius: 10,
-    },
-    text: {
-        fontSize: 20,
-        color: "#000",
-        fontWeight: "bold",
-    },
-});
+}; export default AddButton;

@@ -1,6 +1,5 @@
 /* AuthStack */
 
-import { StyleSheet } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LoginScreen from "../screens/LoginScreen";
 import SignupScreen from "../screens/SignupScreen";
@@ -15,5 +14,3 @@ const AuthStack = () => {
         </Stack.Navigator>
     )
 }; export default AuthStack;
-
-const styles = StyleSheet.create({});
