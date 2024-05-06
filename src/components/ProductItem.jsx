@@ -4,9 +4,13 @@ import { View, StyleSheet, Image, Text, Pressable } from 'react-native';
 import Card from './Card';
 import { useDispatch } from 'react-redux';
 import { setIdselected } from '../features/shopSlice';
+import { useColors } from '../hooks/useColors';
+import {usePrice} from "../hooks/usePrice";
 
 const ProductItem = ({ product, navigation }) => {
 
+  const {formatearPrecio} = usePrice();
+  const {whiteColor, blackColor} = useColors();
   const dispatch = useDispatch();
 
   const handleNavigate = () => {
@@ -15,53 +19,16 @@ const ProductItem = ({ product, navigation }) => {
   }
 
   return (
-      <View style={styles.ProductItem}>
+      <View style={{backgroundColor: "transparent"}}>
         <Card>
-          <Pressable style={styles.ProductItem__Pressable} onPress={handleNavigate}>
-            <Image style={styles.Pressable__Image} source={{uri: product.image}} />
-            <View style={styles.Pressable__Text}>
-              <Text style={styles.Text__Title}>{product.title}</Text>
-              <Text style={styles.Text__Price}>${product.price}</Text>
+          <Pressable style={{width: "100%", flexDirection: "row", alignItems: "center", justifyContent: "space-between", borderRadius: 10, overflow: "hidden", height: "auto"}} onPress={handleNavigate}>
+            <Image style={{width: "30%", aspectRatio: 1/1}} source={{uri: product.image}} />
+            <View style={{width: "70%", paddingLeft: 10, paddingRight: 10}}>
+              <Text style={{fontSize: 20, fontWeight: "bold", color: blackColor, textAlign: "right", width: "100%"}}>{product.title}</Text>
+              <Text style={{fontSize: 16, fontWeight: "bold", color: blackColor, textAlign: "right"}}>${formatearPrecio(product.price)}</Text>
             </View>
           </Pressable>
         </Card>
       </View>
   )
 }; export default ProductItem;
-
-const styles = StyleSheet.create({
-  ProductItem: {
-    backgroundColor: "#000",
-  },
-  ProductItem__Pressable: {
-    width: '100%',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    borderRadius: 10,
-    overflow: 'hidden',
-    height: "auto",
-  },
-  Pressable__Image: {
-    width: "30%",
-    aspectRatio: 1,
-  },
-  Pressable__Text: {
-    width: "70%",
-    paddingLeft: 10,
-    paddingRight: 10,
-  },
-  Text__Title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#000',
-    textAlign: 'right',
-    width: "100%",
-  },
-  Text__Price: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#000',
-    textAlign: 'right',
-  },
-});

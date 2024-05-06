@@ -4,8 +4,7 @@ import { Image, StyleSheet, View, Text } from "react-native";
 import AddButton from "../components/AddButton";
 import { useDispatch, useSelector } from "react-redux";
 import { useGetProfileImageQuery } from "../services/shopService";
-import Titulo from "../components/Titulo";
-import SwitchLight from "../components/SwitchLight";
+import Header from "../components/Header";
 import { clearUser } from "../features/userSlice";
 
 const MyProfile = ({ navigation }) => {
@@ -27,11 +26,7 @@ const MyProfile = ({ navigation }) => {
 
   return (
     <View style={styles.MyProfile}>
-      <View style={styles.header}>
-        <Titulo title="Profile" />
-        <SwitchLight />
-      </View>
-
+      <Header title="Profile"/>
       <View style={styles.container}>
         {imageFromBase || imageCamera ? (
           <Image

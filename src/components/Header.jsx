@@ -3,24 +3,16 @@
 import { View, StyleSheet } from 'react-native';
 import Titulo from './Titulo';
 import ArrowBack from './ArrowBack';
-import { useState } from 'react';
 import SwitchLight from './SwitchLight';
-import { useDispatch } from 'react-redux';
-import { setDarkMode } from '../features/globalSlice';
+import {useDarkMode} from "../hooks/useDarkMode";
 
-const Header = ({ title, navigation }) => {
+const Header = ({ title, navigation, display }) => {
 
-  const dispatch = useDispatch();
-  const [isEnabled, setIsEnabled] = useState(false);
-
-  const handleTheme = () => {
-    setIsEnabled(initialState =>!initialState);
-    dispatch(setDarkMode(!isEnabled));
-  };
+  const {handleTheme, isEnabled} = useDarkMode();
 
   return (
     <View style={styles.Header}>
-        <ArrowBack navigation={navigation} />
+        {navigation ? <ArrowBack navigation={navigation} /> : ""}
         <Titulo title={title} />
         <SwitchLight isEnabled={isEnabled} setIsEnabled={handleTheme} />
     </View>

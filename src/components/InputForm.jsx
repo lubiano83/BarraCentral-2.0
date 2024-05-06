@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
     subtitle: {
         width: '90%',
         fontSize: 16,
+        color: "#fff",
     },
     error: {
         paddintTop: 2,
@@ -49,8 +50,9 @@ const styles = StyleSheet.create({
         width: '90%',
         borderWidth: 0,
         borderBottomWidth: 3,
-        borderBottomColor: "#000",
+        borderBottomColor: "#fff",
         padding: 2,
         fontSize: 14,
+        color: "#fff",
     }
 })

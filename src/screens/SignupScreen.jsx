@@ -1,6 +1,6 @@
 /* SignupScreen */
 
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View, ImageBackground } from "react-native";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import SubmitButton from "../components/SubmitButton";
@@ -60,19 +60,20 @@ const SignupScreen = ({ navigation }) => {
     };
 
     return (
-        <View style={styles.main}>
+        <ImageBackground style={styles.main} source={require("../../assets/images/barra-central.webp")}>
             <View style={styles.container}>
                 <Text style={styles.title}>Signup</Text>
                 <InputForm label={"Email:"} onChange={setEmail} error={errorMail} />
                 <InputForm label={"Password:"} onChange={setPassword} error={errorPassword} isSecure={true} />
                 <InputForm label={"Confirm Password:"} onChange={setConfirmPassword} error={errorConfirmPassword} isSecure={true} />
-                <SubmitButton onPress={onSubmit} title="Send" />
-                <Text style={styles.sub}>Already have an account?</Text>
-                <Pressable style={styles.Boton__subLink} onPress={() => navigation.navigate("Login")}>
-                    <Text style={styles.subLink}>Login</Text>
-                </Pressable>
+                <View style={styles.button__container}>
+                    <SubmitButton onPress={onSubmit} title="Send" />
+                    <Pressable style={styles.Boton__subLink} onPress={() => navigation.navigate("Login")}>
+                        <Text style={styles.subLink}>Login</Text>
+                    </Pressable>
+                </View>
             </View>
-        </View>
+        </ImageBackground>
     );
 };
 
@@ -84,14 +85,13 @@ const styles = StyleSheet.create({
         height: "100%",
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#fff",
     },
     container: {
         width: "90%",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "lightgray",
+        backgroundColor: "rgba(0, 0, 0, 0.5)",
         borderRadius: 20,
         gap: 15,
         padding: 20,
@@ -100,11 +100,14 @@ const styles = StyleSheet.create({
         fontSize: 24,
         fontWeight: "bold",
         textDecorationLine: "underline",
+        color: "#fff",
     },
-    sub: {
-        fontSize: 16,
-        color: "black",
-        fontWeight: "bold",
+    button__container: {
+        flexDirection: "row-reverse",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
+        gap: 10,
     },
     Boton__subLink: {
         width: 90,

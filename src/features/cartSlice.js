@@ -49,8 +49,12 @@ export const cartSlice = createSlice({
                 updatedAt: new Date().toLocaleString()
             }
         },
+        cleanCart: (state) => {
+            // logic to remove product
+            state.value.items = "";
+        },
     }
 })
 
-export const { addCartItem, removeCartItem } = cartSlice.actions
+export const { addCartItem, removeCartItem, cleanCart } = cartSlice.actions
 export default cartSlice.reducer
