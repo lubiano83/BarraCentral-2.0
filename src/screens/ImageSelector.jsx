@@ -10,19 +10,11 @@ import GoBackButton from "../components/GoBackButton";
 const ImageSelector = ({ navigation }) => {
 
     const {whiteColor, blackColor} = useColors();
-    const {image, imageFromBase, pickImage, pickLibraryImage, setCameraImage, triggerPostImage, localId, isImageFromCamera, imageURI, dispatch} = useCamera();
+    const {image, imageFromBase, pickImage, pickLibraryImage, confirmImage} = useCamera();
 
-    const confirmImage = async () => {
-        try {
-            dispatch(setCameraImage(image));
-            triggerPostImage({image, localId});
-            if(isImageFromCamera){
-                const result = await ExpoLibrary.createAssetAsync(imageURI);
-            }
-            navigation.goBack();
-        } catch (error) {
-            console.log(error);
-        }
+    const confirmImageAndGoBack = () => {
+        confirmImage();
+        navigation.goBack();
     };
 
     const goBackToMyProfile = () => {
@@ -38,7 +30,7 @@ const ImageSelector = ({ navigation }) => {
                             <Image source={{ uri: image || imageFromBase?.image}} style={{width: 200, height: 200}} />
                             <AddButton title="Take another photo" onPress={pickImage} />
                             <AddButton title="Pick photo from gallery" onPress={pickLibraryImage} />
-                            <AddButton title="Confirm photo" onPress={confirmImage} />
+                            <AddButton title="Confirm photo" onPress={confirmImageAndGoBack} />
                             
                         </>
                     ) : (

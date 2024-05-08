@@ -23,6 +23,18 @@ export const useCamera = () => {
         return granted
     };
 
+    const confirmImage = async () => {
+        try {
+            dispatch(setCameraImage(image));
+            triggerPostImage({image, localId});
+            if(isImageFromCamera){
+                const result = await ExpoLibrary.createAssetAsync(imageURI);
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     const pickImage = async () => {
         try {
             setIsImageFromCamera(true);
@@ -69,5 +81,5 @@ export const useCamera = () => {
         }
     };
 
-    return {image, imageFromBase, pickImage, pickLibraryImage, setCameraImage, triggerPostImage, localId, isImageFromCamera, imageURI, dispatch};
+    return {image, imageFromBase, pickImage, pickLibraryImage, setCameraImage, triggerPostImage, localId, isImageFromCamera, imageURI, dispatch, confirmImage};
 };
