@@ -1,5 +1,4 @@
 /* Cart */
-
 import { View, FlatList, Text, Pressable } from 'react-native';
 import CartItem from '../components/CartItem';
 import { useSelector } from 'react-redux';
@@ -41,7 +40,7 @@ const Cart = () => {
             <FlatList data={CartData} keyExtractor={cartItem => cartItem.id} renderItem={({item}) => <CartItem cartItem={item} /> } />
         </View>
         <View style={{alignItems: "center", justifyContent: "center", width: "100%", gap: 10, paddingHorizontal: 20, paddingTop: 10}}>
-            <Text style={{color: whiteColor, fontSize: 24, textAlign: "center"}}>Total: ${formatearPrecio(total)}</Text>
+            <Text style={{color: whiteColor, fontSize: 24, textAlign: "center"}}>Total: ${total ? formatearPrecio(total) : 0}</Text>
             <Pressable style={{width: "100%", height: 50, alignItems: "center", justifyContent: "center", backgroundColor: whiteColor, borderRadius: 10}} onPress={onConfirmOrder}>
                 <Text style={{fontSize: 24, fontWeight: "bold", color: blackColor, marginBottom: 1}}>Buy</Text>
             </Pressable>

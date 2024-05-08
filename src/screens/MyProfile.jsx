@@ -1,15 +1,17 @@
 /* MyProfile */
-
-import { Image, StyleSheet, View, Text } from "react-native";
+import { Image, View, Text } from "react-native";
 import AddButton from "../components/AddButton";
 import { useDispatch, useSelector } from "react-redux";
 import { useGetProfileImageQuery } from "../services/shopService";
 import Header from "../components/Header";
 import { clearUser } from "../features/userSlice";
 import { useColors } from "../hooks/useColors";
+import { useLocation } from "../hooks/useLocation";
+import { useGetLocationQuery } from "../services/shopService";
 
 const MyProfile = ({ navigation }) => {
 
+  const {address} = useLocation();
   const { blackColor, whiteColor } = useColors();
   const { imageCamera, localId, user, token } = useSelector(
     (state) => state.authReducer.value
@@ -24,6 +26,12 @@ const MyProfile = ({ navigation }) => {
   const SignOut = async () => {
     dispatch(clearUser(localId));
   };
+
+  const {data: location, isLoading, error} = useGetLocationQuery(localId);
+
+  const onChangeLocation = () => {
+    navigation.navigate('Location Selector')
+  }
 
   const defaultImageRoute = "../../assets/images/defaultProfile.png";
 
@@ -45,13 +53,15 @@ const MyProfile = ({ navigation }) => {
           />
         )}
         <AddButton onPress={launchCamera} title={imageFromBase || imageCamera ? "Modify profile picture" : "Add profile picture"} />
+        <AddButton onPress={onChangeLocation} title={ location ? "Change address" : "Location Selector"} />
       </View>
       <View style={{paddingHorizontal: 20, gap: 5}}>
         <Text style={{fontSize: 18, color: whiteColor, textAlign: "left"}}>Mail: {user}</Text>
         <Text style={{fontSize: 18, color: whiteColor, textAlign: "left"}}>ID: {localId}</Text>
+        <Text style={{fontSize: 18, color: whiteColor, textAlign: "left"}}>Address: {location ? address : "No location set"}</Text>
       </View>
       <View style={{position: "absolute", width: "100%", paddingHorizontal: 20, bottom: 20}}>
-        <AddButton onPress={SignOut} title="Sing Out" />
+        <AddButton onPress={SignOut} title="Sign Out" />
       </View>
     </View>
   );

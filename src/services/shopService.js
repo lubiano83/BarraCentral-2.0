@@ -4,7 +4,7 @@ import { baseUrl } from "../databases/realtimeDatabase"
 export const shopApi = createApi({
     reducerPath: "shopApi", //Establish a unique name for the API
     baseQuery: fetchBaseQuery({ baseUrl: baseUrl }),
-    tagTypes: ['profileImageGet'], //Declare tags
+    tagTypes: ['profileImageGet', 'locationGet'], //Declare tags
     endpoints: (builder) => ({
         getCategories: builder.query({
             query: () => `categories.json`,
@@ -34,28 +34,48 @@ export const shopApi = createApi({
             })
         }),
         getProfileImage: builder.query({
-            query: (localId) => `profileImages/${localId}.json`, // la query es para obtener datos
-            providesTags: ['profileImageGet'] // es como un useEffect y el tag es como un array de dependencias, es para que se vuelva a llamar luego de que se llama la primera ves.
+            query: (localId) => `profileImages/${localId}.json`,
+            providesTags: ['profileImageGet']
         }),
         //We make a PUT request for not creating additional key, because de localId is already an unique key.
         postProfileImage: builder.mutation({
             query: ({image, localId}) => ({
                 url: `profileImages/${localId}.json`,
-                method: "PUT", // si utilizamos el metodo POST, este nos generara un id unico, el cual no es necesario en este caso.
+                method: "PUT",
                 body: {
                     image: image
                 },
             }),
             invalidatesTags: ['profileImageGet'] //Invalidates will trigger a refetch on profileImageGet
         }),
+        getLocation: builder.query({
+            query: (localId) => `locations/${localId}.json`,
+            providesTags: ['locationGet']
+        }),
+        //We make a PUT request for not creating additional key, because de localId is already an unique key.
+        postLocation: builder.mutation({
+            query: ({location, localId}) => ({
+                url: `locations/${localId}.json`,
+                method: "PUT",
+                body: {
+                    latitude: location.latitude,
+                    longitude: location.longitude,
+                    address: location.address,
+                    updatedAt: location.updatedAt // para ver la fecha del registro.
+                },
+            }),
+            invalidatesTags: ['locationGet'] //Invalidates will trigger a refetch on profileImageGet
+        })
     }),
 })
 
 export const {
     useGetCategoriesQuery,
-    useGetProductsByCategoryQuery,
     useGetProductByIdQuery,
+    useGetProductsByCategoryQuery,
     usePostOrderMutation,
     useGetProfileImageQuery,
     usePostProfileImageMutation,
+    useGetLocationQuery,
+    usePostLocationMutation
 } = shopApi

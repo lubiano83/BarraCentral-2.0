@@ -9,7 +9,7 @@ const AddButton = ({ title = "", onPress = () => {}, color = "#fff" }) => {
 
     return (
         <Pressable
-            style={{width: "100%", height: 50, borderWidth: 1, backgroundColor: whiteColor, justifyContent: "center", alignItems: "center", padding: 10, borderRadius: 10}}
+            style={{width: "100%", height: 50, backgroundColor: whiteColor, justifyContent: "center", alignItems: "center", borderRadius: 10}}
             onPress={onPress}
         >
             <Text style={{fontSize: 20, color: blackColor, fontWeight: "bold"}}>{title}</Text>
