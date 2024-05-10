@@ -6,11 +6,13 @@ import { useCamera } from "../hooks/useCamera";
 import Header from "../components/Header";
 import { useColors } from "../hooks/useColors";
 import GoBackButton from "../components/GoBackButton";
+import { useDispatch } from "react-redux";
 
 const ImageSelector = ({ navigation }) => {
 
+    const dispatch = useDispatch();
     const {whiteColor, blackColor} = useColors();
-    const {image, imageFromBase, pickImage, pickLibraryImage, confirmImage} = useCamera();
+    const {image, imageFromBase, pickImage, pickLibraryImage, confirmImage, deleteImage} = useCamera();
 
     const confirmImageAndGoBack = () => {
         confirmImage();
@@ -30,8 +32,7 @@ const ImageSelector = ({ navigation }) => {
                             <Image source={{ uri: image || imageFromBase?.image}} style={{width: 200, height: 200}} />
                             <AddButton title="Take another photo" onPress={pickImage} />
                             <AddButton title="Pick photo from gallery" onPress={pickLibraryImage} />
-                            <AddButton title="Confirm photo" onPress={confirmImageAndGoBack} />
-                            
+                            <AddButton title={!image ? "Delete Foto" : "Confirm photo"} onPress={confirmImageAndGoBack} />
                         </>
                     ) : (
                         <>
@@ -39,6 +40,7 @@ const ImageSelector = ({ navigation }) => {
                                 <Text style={{color: blackColor}}>No photo to show...</Text>
                             </View>
                             <AddButton title="Take a photo" onPress={pickImage} />
+                            <AddButton title="Pick photo from gallery" onPress={pickLibraryImage} />
                         </>
                     )}
                     <GoBackButton title="Go back" onPress={goBackToMyProfile}/>

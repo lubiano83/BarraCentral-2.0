@@ -13,7 +13,6 @@ export const useLocation = () => {
     const {localId} = useSelector(state => state.authReducer.value);
 
     const onConfirmAddress = () => {
-
         triggerPostUserLocation({
             location: {
                 latitude: location.latitude,
@@ -23,7 +22,7 @@ export const useLocation = () => {
             },
             localId: localId
         });
-      };
+    };
     
       //Location requested on mount
       useEffect(() => {

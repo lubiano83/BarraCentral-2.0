@@ -59,7 +59,6 @@ export const useCamera = () => {
         }
     };
     
-
     const pickLibraryImage = async () => {
         try {
             setIsImageFromCamera(false);

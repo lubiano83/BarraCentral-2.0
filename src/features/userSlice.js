@@ -24,9 +24,9 @@ export const authSlice = createSlice({
         setCameraImage: (state, {payload}) => {
             //Add logic
             state.value.imageCamera = payload;
-        }
+        },
     }
 })
 
-export const {setUser, clearUser, setCameraImage} = authSlice.actions
+export const {setUser, clearUser, setCameraImage, deleteCameraImage} = authSlice.actions
 export default authSlice.reducer
