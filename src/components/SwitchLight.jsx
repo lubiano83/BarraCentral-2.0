@@ -1,5 +1,4 @@
 /* SwitchLight */
-
 import { View, Switch } from 'react-native';
 
 const SwitchLight = ({ isEnabled = true, setIsEnabled = () => {} }) => {

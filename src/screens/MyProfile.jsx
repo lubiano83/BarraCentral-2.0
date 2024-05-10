@@ -8,6 +8,7 @@ import { clearUser } from "../features/userSlice";
 import { useColors } from "../hooks/useColors";
 import { useLocation } from "../hooks/useLocation";
 import { useGetLocationQuery } from "../services/shopService";
+import { truncateSessionsTable } from "../persistence/index";
 
 const MyProfile = ({ navigation }) => {
 
@@ -23,9 +24,14 @@ const MyProfile = ({ navigation }) => {
     navigation.navigate("Image selector");
   };
 
-  const SignOut = async () => {
-    dispatch(clearUser(localId));
-  };
+  const signOut = async () => {
+    try {
+        dispatch(clearUser())
+        const response = await truncateSessionsTable();
+    } catch (error) {
+      alert("There was an error.")
+    }
+  }
 
   const {data: location, isLoading, error} = useGetLocationQuery(localId);
 
@@ -61,7 +67,7 @@ const MyProfile = ({ navigation }) => {
         <Text style={{fontSize: 18, color: whiteColor, textAlign: "left"}}>Address: {location ? address : "No location set"}</Text>
       </View>
       <View style={{position: "absolute", width: "100%", paddingHorizontal: 20, bottom: 20}}>
-        <AddButton onPress={SignOut} title="Sign Out" />
+        <AddButton onPress={signOut} title="Sign Out" />
       </View>
     </View>
   );

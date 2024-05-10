@@ -1,5 +1,4 @@
 /* Card */
-
 import { View } from 'react-native';
 import { useColors } from '../hooks/useColors';
 

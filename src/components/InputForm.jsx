@@ -1,5 +1,4 @@
 /* InputForm */
-
 import { Text, TextInput, View } from 'react-native';
 import { useState } from 'react';
 

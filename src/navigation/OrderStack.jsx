@@ -1,6 +1,4 @@
 /* OrderStack */
-
-import { StyleSheet } from 'react-native';
 import Order from "../screens/Order";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
@@ -13,5 +11,3 @@ const OrderStack = () => {
     </Stack.Navigator>
   )
 }; export default OrderStack;
-
-const styles = StyleSheet.create({});

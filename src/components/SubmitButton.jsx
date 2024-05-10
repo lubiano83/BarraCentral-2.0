@@ -1,5 +1,4 @@
 /* SubmitButton */
-
 import { Pressable, Text } from "react-native";
 import {useColors} from "../hooks/useColors";
 

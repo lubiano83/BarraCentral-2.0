@@ -4,15 +4,26 @@ import { Pressable, Text, View, ImageBackground } from "react-native";
 import SubmitButton from "../components/SubmitButton";
 import InputForm from "../components/InputForm";
 import { useLoginAndSignup } from "../hooks/useLoginAndSignup";
+import { useDispatch } from "react-redux";
+import { setUser } from "../features/userSlice";
+import { useEffect } from "react";
 
 const SignupScreen = ({ navigation }) => {
 
-    const {onSubmitSignup, setEmail, errorMail, setPassword, errorPassword, setConfirmPassword, errorConfirmPassword, } = useLoginAndSignup();
+    const dispatch = useDispatch();
+    const {onSubmitSignup, setEmail, errorMail, setPassword, errorPassword, setConfirmPassword, errorConfirmPassword, result2} = useLoginAndSignup();
 
-    const onSubmitSignupAndClean = () => {
-        onSubmitSignup();
-        navigation.navigate("Login")
-    };
+    useEffect(() => {
+        if (result2.isSuccess) {
+          dispatch(
+            setUser({
+              email: result2.data.email,
+              idToken: result2.data.idToken,
+              localId: result2.data.localId,
+            })
+          );
+        }
+      }, [result2]);
 
     return (
         <ImageBackground style={{width: "100%", height: "100%", justifyContent: "center", alignItems: "center"}} source={require("../../assets/images/barra-central.webp")}>
@@ -22,7 +33,7 @@ const SignupScreen = ({ navigation }) => {
                 <InputForm label={"Password:"} onChange={setPassword} error={errorPassword} isSecure={true} />
                 <InputForm label={"Confirm Password:"} onChange={setConfirmPassword} error={errorConfirmPassword} isSecure={true} />
                 <View style={{flexDirection: "row-reverse", justifyContent: "center", alignItems: "center", width: "100%", gap: 10}}>
-                    <SubmitButton onPress={onSubmitSignupAndClean} title="Send" />
+                    <SubmitButton onPress={onSubmitSignup} title="Send" />
                     <Pressable style={{width: 90, height: 40, borderRadius: 10, backgroundColor: "blue", alignItems: "center", justifyContent: "center"}} onPress={() => navigation.navigate("Login")}>
                         <Text style={{fontSize: 24, color: "#fff"}}>Login</Text>
                     </Pressable>

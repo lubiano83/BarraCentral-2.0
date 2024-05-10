@@ -1,15 +1,17 @@
 /* Cart */
 import { View, FlatList, Text, Pressable } from 'react-native';
 import CartItem from '../components/CartItem';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { usePostOrderMutation } from '../services/shopService';
 import Header from '../components/Header';
 import { usePrice } from '../hooks/usePrice';
 import { useCamera } from '../hooks/useCamera';
 import { useColors } from '../hooks/useColors';
+import { cleanCart } from '../features/cartSlice';
 
 const Cart = () => {
 
+    const dispatch = useDispatch();
     const {whiteColor, blackColor} = useColors();
     const {pickImage} = useCamera();
     const {formatearPrecio} = usePrice();
@@ -20,16 +22,16 @@ const Cart = () => {
     const onConfirmOrder = async () => {
       const codigoIngresado = "mesa-01" // aqui va el modo foto para scanear codigo QR
       try {
-          await pickImage()
           // Verificar si el código ingresado coincide con el código secreto fijo
           if (codigoIngresado === "mesa-01") {
               triggerPostOrder({items: CartData, user: user, total}); // la orden esta puesta con el mail de momento
-              return alert("¡Pedido enviado y esperando confirmación!");
+              dispatch(cleanCart());
+              return alert("Order sent and awaiting confirmation!");
           } else {
-              throw new Error("Código incorrecto. No se puede confirmar el pedido.");
+              throw new Error("Incorrect code. The order cannot be confirmed.");
           }
       } catch (error) {
-          console.error("Error al confirmar el pedido:", error.message);
+          alert("Error confirming the order.")
       }
   };
 

@@ -1,5 +1,4 @@
 /* Ayuda */
-
 import { Pressable, Text } from "react-native";
 
 const InicioAyuda = ({ayuda}) => {

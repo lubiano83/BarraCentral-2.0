@@ -1,5 +1,4 @@
 /* ItemDetail */
-
 import { View, Image, Text, ScrollView } from "react-native";
 import Header from "../components/Header";
 import Counter from "../components/Counter";

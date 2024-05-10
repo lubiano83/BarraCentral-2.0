@@ -1,5 +1,4 @@
 /* OrderItem */
-
 import { Text, View } from 'react-native';
 import { Feather } from "@expo/vector-icons";
 import { useColors } from '../hooks/useColors';

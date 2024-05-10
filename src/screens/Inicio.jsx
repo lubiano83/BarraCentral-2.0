@@ -1,5 +1,4 @@
 /* Inicio */
-
 import { ImageBackground, View } from "react-native";
 import InicioAyuda from "../components/InicioAyuda";
 import InicioTexto from "../components/InicioTexto";

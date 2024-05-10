@@ -1,9 +1,8 @@
 /* useLoginAndSignup */
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useSignInMutation } from "../services/authService";
 import { useDispatch } from "react-redux";
-import { setUser } from "../features/userSlice";
 import { loginSchema } from "../validations/authSchema";
 import { signupSchema } from "../validations/authSchema";
 import { useSignUpMutation } from "../services/authService";
@@ -19,22 +18,6 @@ export const useLoginAndSignup = () => {
   const [errorConfirmPassword, setErrorConfirmPassword] = useState("");
   const [triggerSignUp, result2] = useSignUpMutation();
 
-  console.log(result);
-  console.log(result2);
-
-  useEffect(() => {
-    if (result.isSuccess ?? result2.isSuccess) {
-      console.log("muestrame el resultado: ", result ?? result2);
-      dispatch(
-        setUser({
-          email: result.data.email ?? result2.data.email,
-          idToken: result.data.idToken ?? result2.data.idToken,
-          localId: result.data.localId ?? result2.data.localId,
-        })
-      );
-    }
-  }, [result ?? result2]);
-
   const onSubmitLogin = () => {
     try {
       setErrorMail("");
@@ -42,9 +25,7 @@ export const useLoginAndSignup = () => {
       const validation = loginSchema.validateSync({ email, password });
       triggerSignIn({ email, password });
     } catch (err) {
-      console.log("Entro al signup el error");
-      console.log(err.path);
-      console.log(err.message);
+        alert("There was an error.")
       switch (err.path) {
         case "email":
           setErrorMail(err.message);
@@ -70,9 +51,7 @@ export const useLoginAndSignup = () => {
       });
       triggerSignUp({ email, password, returnSecureToken: true });
     } catch (err) {
-      console.log("Entro al signup el error");
-      console.log(err.path);
-      console.log(err.message);
+        alert("There was an error.")
       switch (err.path) {
         case "email":
           setErrorMail(err.message);
@@ -98,5 +77,9 @@ export const useLoginAndSignup = () => {
     setConfirmPassword,
     errorConfirmPassword,
     onSubmitSignup,
+    dispatch,
+    email,
+    result,
+    result2
   };
 };

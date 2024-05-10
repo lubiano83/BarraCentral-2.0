@@ -1,5 +1,4 @@
 /* Header */
-
 import { View } from 'react-native';
 import Titulo from './Titulo';
 import ArrowBack from './ArrowBack';

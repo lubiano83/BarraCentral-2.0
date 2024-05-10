@@ -32,7 +32,6 @@ export const useLocation = () => {
           let { status } = await Location.requestForegroundPermissionsAsync();
           if (status === "granted") {
             let location = await Location.getCurrentPositionAsync({});
-            console.log(location);
             setLocation({
                 latitude: location.coords.latitude,
                 longitude: location.coords.longitude
@@ -49,7 +48,6 @@ export const useLocation = () => {
                         const url_reverse_geocode = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${location.latitude},${location.longitude}&key=${googleMapsApiKey}`;
                         const response = await fetch(url_reverse_geocode);
                         const data = await response.json();
-                        console.dir(data);
                         setAddress(data.results[0].formatted_address);
                     }
                 } catch (error) {

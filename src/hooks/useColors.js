@@ -1,3 +1,4 @@
+/* useColors */
 import { useSelector } from 'react-redux';
 
 export const useColors = () => {

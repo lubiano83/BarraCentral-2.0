@@ -1,3 +1,4 @@
+/* useCamera */
 import { useState } from "react";
 import * as ImagePicker from "expo-image-picker";
 import { useDispatch, useSelector } from "react-redux";

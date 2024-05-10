@@ -1,5 +1,4 @@
 /* Titulo */
-
 import { Text } from 'react-native';
 
 const Titulo = ({title}) => {

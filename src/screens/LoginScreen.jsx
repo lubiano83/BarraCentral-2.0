@@ -1,13 +1,39 @@
 /* LoginScreen */
-
 import { Pressable, Text, View, ImageBackground } from 'react-native';
 import InputForm from '../components/InputForm';
 import SubmitButton from '../components/SubmitButton';
 import { useLoginAndSignup } from '../hooks/useLoginAndSignup';
+import { useEffect } from 'react';
+import { useDispatch } from'react-redux';
+import { setUser } from '../features/userSlice';
+import { insertSession } from '../persistence/index';
 
 const LoginScreen = ({navigation}) => {
 
-    const {onSubmitLogin, setEmail, errorMail, setPassword, errorPassword} = useLoginAndSignup();
+    const dispatch = useDispatch();
+    const {onSubmitLogin, setEmail, errorMail, setPassword, errorPassword, result} = useLoginAndSignup();
+
+    useEffect(() => {
+        if (result?.data && result.isSuccess) {
+          insertSession({
+            email: result.data.email,
+            localId: result.data.localId,
+            token: result.data.idToken,
+          })
+            .then(() => {
+              dispatch(
+                setUser({
+                  email: result.data.email,
+                  idToken: result.data.idToken,
+                  localId: result.data.localId,
+                })
+              );
+            })
+            .catch((error) => {
+              alert("There was an error.")
+            });
+        }
+      }, [result]);
     
   return (
     <ImageBackground style={{width: "100%", height: "100%", justifyContent: "center", alignItems: "center"}} source={require("../../assets/images/barra-central.webp")}>

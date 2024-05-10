@@ -1,6 +1,4 @@
 /* InicioStack */
-
-import { StyleSheet } from 'react-native';
 import ItemListCategory from '../screens/ItemListCategory';
 import ItemDetail from "../screens/ItemDetail";
 import Home from "../screens/Home";
@@ -19,5 +17,3 @@ const InicioStack = () => {
     </Stack.Navigator>
   )
 }; export default InicioStack;
-
-const styles = StyleSheet.create({});

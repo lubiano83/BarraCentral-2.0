@@ -1,6 +1,5 @@
 /* ProductItem */
-
-import { View, StyleSheet, Image, Text, Pressable } from 'react-native';
+import { View, Image, Text, Pressable } from 'react-native';
 import Card from './Card';
 import { useDispatch } from 'react-redux';
 import { setIdselected } from '../features/shopSlice';

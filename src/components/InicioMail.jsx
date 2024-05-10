@@ -1,5 +1,4 @@
 /* InicioMail */
-
 import { Pressable } from 'react-native';
 import { Zocial } from '@expo/vector-icons';
 

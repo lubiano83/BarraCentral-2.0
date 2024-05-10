@@ -1,5 +1,4 @@
 /* ItemListCategory */
-
 import { View, FlatList, TextInput } from 'react-native';
 import ProductItem from '../components/ProductItem';
 import { useEffect, useState } from 'react';
@@ -20,7 +19,6 @@ const ItemListCategory = ({ navigation, route }) => {
         if(!isLoading) {
             // Products filtered by category
             const productsPrefiltered = productsFetched.filter(product => product.category === category);
-            console.log(productsPrefiltered);
             // Products filtered by name
             const productsFilter = productsPrefiltered.filter(product => product.title.toLocaleLowerCase().includes(keyword.toLocaleLowerCase()));
             setProductsFiltered(productsFilter);

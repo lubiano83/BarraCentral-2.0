@@ -1,5 +1,5 @@
+/* MapPreview */
 import { Image, View } from "react-native";
-import React from "react";
 import { googleMapsApiKey } from "../databases/googleMaps";
 
 const MapPreview = ({ location }) => {

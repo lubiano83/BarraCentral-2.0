@@ -1,5 +1,4 @@
 /* CategoryItem */
-
 import { Text, Image, Pressable } from 'react-native';
 import Card from './Card';
 import { useDispatch } from 'react-redux'; 

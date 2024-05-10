@@ -1,5 +1,4 @@
 /* InicioCarta */
-
 import { Pressable, Text } from 'react-native';
 
 const InicioCarta = ({navigation}) => {

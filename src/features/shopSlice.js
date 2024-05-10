@@ -1,5 +1,4 @@
 /* shopSlice */
-
 import { createSlice } from "@reduxjs/toolkit";
 
 const shopSlice = createSlice({
