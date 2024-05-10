@@ -20,7 +20,7 @@ const LoginScreen = ({navigation}) => {
             localId: result.data.localId,
             token: result.data.idToken,
           })
-            .then(() => {
+            .then((response) => {
               dispatch(
                 setUser({
                   email: result.data.email,
