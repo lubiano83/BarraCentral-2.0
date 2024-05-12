@@ -4,11 +4,11 @@ import { FlatList, View } from 'react-native';
 import CategoryItem from "../components/CategoryItem";
 import Header from '../components/Header';
 import { useGetCategoriesQuery } from '../services/shopService';
-import {useColors} from "../hooks/useColors"
+import {useDarkMode} from "../hooks/useDarkMode"
 
 const Home = ({ navigation }) => {
 
-  const {whiteColor, blackColor} = useColors();
+  const {whiteColor, blackColor} = useDarkMode();
   const {data: categories, error, isLoading} = useGetCategoriesQuery();
   
   return (

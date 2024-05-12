@@ -1,11 +1,11 @@
 /* OrderItem */
 import { Text, View } from 'react-native';
 import { Feather } from "@expo/vector-icons";
-import { useColors } from '../hooks/useColors';
+import { useDarkMode } from "../hooks/useDarkMode";
 
 const OrderItem = ({orderItem}) => {
 
-    const {whiteColor, blackColor} = useColors();
+    const {whiteColor, blackColor} = useDarkMode();
     const TOTAL = orderItem.items.reduce((acc, currentItem) => (acc += currentItem.price * currentItem.quantity), 0);
 
   return (    

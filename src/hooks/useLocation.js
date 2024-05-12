@@ -13,15 +13,15 @@ export const useLocation = () => {
     const {localId} = useSelector(state => state.authReducer.value);
 
     const onConfirmAddress = () => {
-        triggerPostUserLocation({
-            location: {
-                latitude: location.latitude,
-                longitude: location.longitude,
-                address: address,
-                updatedAt: new Date().toLocaleDateString()
-            },
-            localId: localId
-        });
+      triggerPostUserLocation({
+          location: {
+              latitude: location.latitude,
+              longitude: location.longitude,
+              address: address,
+              updatedAt: new Date().toLocaleDateString()
+          },
+          localId: localId
+      });
     };
     
       //Location requested on mount

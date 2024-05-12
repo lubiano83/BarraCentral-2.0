@@ -4,11 +4,11 @@ import { useDispatch } from 'react-redux';
 import { increment, decrement } from "../features/counterSlice";
 import { AntDesign } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
-import { useColors } from '../hooks/useColors';
+import { useDarkMode } from '../hooks/useDarkMode';
 
 const Counter = ({count, handleAddCart}) => {
 
-    const {blackColor, whiteColor} = useColors();
+    const {blackColor, whiteColor} = useDarkMode();
     const dispatch = useDispatch();
 
   return (

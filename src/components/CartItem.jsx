@@ -4,11 +4,11 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { removeCartItem } from "../features/cartSlice";
 import { useDispatch } from 'react-redux';
 import { usePrice } from '../hooks/usePrice';
-import {useColors} from "../hooks/useColors";
+import {useDarkMode} from "../hooks/useDarkMode";
 
 const CartItem = ({cartItem}) => {
 
-  const {whiteColor, blackColor} = useColors();
+  const {whiteColor, blackColor} = useDarkMode();
   const {formatearPrecio} = usePrice();
   dispatch = useDispatch();
 

@@ -6,13 +6,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useGetProductByIdQuery } from "../services/shopService";
 import { addCartItem } from "../features/cartSlice";
 import { reset } from "../features/counterSlice";
-import { useColors } from "../hooks/useColors";
+import { useDarkMode } from "../hooks/useDarkMode";
 import { usePrice } from "../hooks/usePrice";
 
 const ItemDetail = ({ route, navigation }) => {
 
   const {formatearPrecio} = usePrice();
-  const {whiteColor, blackColor} = useColors();
+  const {whiteColor, blackColor} = useDarkMode();
   const {productId} = route.params
   const count = useSelector(state => state.counterReducer.value);
   const dispatch = useDispatch();

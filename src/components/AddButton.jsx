@@ -1,10 +1,10 @@
 /* AddButton */
 import { Pressable, Text } from "react-native";
-import {useColors} from "../hooks/useColors";
+import {useDarkMode} from "../hooks/useDarkMode";
 
 const AddButton = ({ title = "", onPress = () => {}, color = "#fff" }) => {
 
-    const {whiteColor, blackColor} = useColors();
+    const {whiteColor, blackColor} = useDarkMode();
 
     return (
         <Pressable

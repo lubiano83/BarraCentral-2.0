@@ -4,14 +4,14 @@ import * as ExpoLibrary from "expo-media-library";
 import AddButton from "../components/AddButton";
 import { useCamera } from "../hooks/useCamera";
 import Header from "../components/Header";
-import { useColors } from "../hooks/useColors";
+import { useDarkMode } from "../hooks/useDarkMode";
 import GoBackButton from "../components/GoBackButton";
 import { useDispatch } from "react-redux";
 
 const ImageSelector = ({ navigation }) => {
 
     const dispatch = useDispatch();
-    const {whiteColor, blackColor} = useColors();
+    const {whiteColor, blackColor} = useDarkMode();
     const {image, imageFromBase, pickImage, pickLibraryImage, confirmImage, deleteImage} = useCamera();
 
     const confirmImageAndGoBack = () => {

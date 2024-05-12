@@ -3,11 +3,11 @@ import { Text, Image, Pressable } from 'react-native';
 import Card from './Card';
 import { useDispatch } from 'react-redux'; 
 import {setCategorySelected} from "../features/shopSlice";
-import { useColors } from '../hooks/useColors';
+import { useDarkMode } from '../hooks/useDarkMode';
 
 const CategoryItem = ({ category, navigation}) => {
 
-    const {whiteColor, blackColor} = useColors();
+    const {whiteColor, blackColor} = useDarkMode();
     const dispatch = useDispatch();
 
     const handleNavigate = () => {

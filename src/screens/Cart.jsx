@@ -5,15 +5,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { usePostOrderMutation } from '../services/shopService';
 import Header from '../components/Header';
 import { usePrice } from '../hooks/usePrice';
-import { useCamera } from '../hooks/useCamera';
-import { useColors } from '../hooks/useColors';
+import { useDarkMode } from '../hooks/useDarkMode';
 import { cleanCart } from '../features/cartSlice';
 
 const Cart = () => {
 
     const dispatch = useDispatch();
-    const {whiteColor, blackColor} = useColors();
-    const {pickImage} = useCamera();
+    const {whiteColor, blackColor} = useDarkMode();
     const {formatearPrecio} = usePrice();
     const { user } = useSelector(state => state.authReducer.value);
     const {items: CartData, total} = useSelector(state => state.cartReducer.value);
@@ -33,7 +31,7 @@ const Cart = () => {
       } catch (error) {
           alert("Error confirming the order.")
       }
-  };
+    };
 
   return (
     <View style={{width: "100%", height: "100%", paddingBottom: 190, alignItems: "center", justifyContent: "space-between", backgroundColor: blackColor}}>

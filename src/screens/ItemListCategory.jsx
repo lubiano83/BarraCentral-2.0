@@ -4,11 +4,11 @@ import ProductItem from '../components/ProductItem';
 import { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import { useGetProductsByCategoryQuery } from '../services/shopService';
-import {useColors} from "../hooks/useColors"
+import {useDarkMode} from "../hooks/useDarkMode"
 
 const ItemListCategory = ({ navigation, route }) => {
 
-    const {blackColor, whiteColor} = useColors();
+    const {blackColor, whiteColor} = useDarkMode();
     const [keyword, setKeyword] = useState("");
     const [productsFiltered, setProductsFiltered] = useState([]);
     const {category} = route.params

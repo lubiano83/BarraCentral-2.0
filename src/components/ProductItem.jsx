@@ -3,13 +3,13 @@ import { View, Image, Text, Pressable } from 'react-native';
 import Card from './Card';
 import { useDispatch } from 'react-redux';
 import { setIdselected } from '../features/shopSlice';
-import { useColors } from '../hooks/useColors';
+import { useDarkMode } from '../hooks/useDarkMode';
 import {usePrice} from "../hooks/usePrice";
 
 const ProductItem = ({ product, navigation }) => {
 
   const {formatearPrecio} = usePrice();
-  const {whiteColor, blackColor} = useColors();
+  const {whiteColor, blackColor} = useDarkMode();
   const dispatch = useDispatch();
 
   const handleNavigate = () => {

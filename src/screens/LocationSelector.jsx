@@ -4,11 +4,11 @@ import AddButton from "../components/AddButton";
 import MapPreview from "../components/MapPreview";
 import { useLocation } from "../hooks/useLocation";
 import Header from "../components/Header";
-import { useColors } from "../hooks/useColors";
+import { useDarkMode } from "../hooks/useDarkMode";
 
 const LocationSelector = ({ navigation }) => {
 
-    const {blackColor, whiteColor} = useColors();
+    const {blackColor, whiteColor} = useDarkMode();
     const {onConfirmAddress, location, address} = useLocation();
 
     const confirmAndBack = () => {

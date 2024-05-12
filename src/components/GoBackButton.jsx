@@ -1,10 +1,10 @@
 /* GoBackButton */
 import { Pressable, Text } from "react-native";
-import { useColors } from "../hooks/useColors";
+import { useDarkMode } from "../hooks/useDarkMode";
 
 const GoBackButton = ({ title, onPress }) => {
 
-    const {whiteColor, blackColor} = useColors();
+    const {whiteColor, blackColor} = useDarkMode();
 
   return (
     <Pressable onPress={onPress} style={{backgroundColor: whiteColor, height: 50, width: "100%", alignItems: "center", justifyContent: "center", borderRadius: 10, position: "absolute", bottom: 0}}>

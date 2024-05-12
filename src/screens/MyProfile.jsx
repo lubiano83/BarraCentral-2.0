@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useGetProfileImageQuery } from "../services/shopService";
 import Header from "../components/Header";
 import { clearUser } from "../features/userSlice";
-import { useColors } from "../hooks/useColors";
+import { useDarkMode } from "../hooks/useDarkMode";
 import { useLocation } from "../hooks/useLocation";
 import { useGetLocationQuery } from "../services/shopService";
 import { truncateSessionsTable } from "../persistence/index";
@@ -13,7 +13,7 @@ import { truncateSessionsTable } from "../persistence/index";
 const MyProfile = ({ navigation }) => {
 
   const {address} = useLocation();
-  const { blackColor, whiteColor } = useColors();
+  const { blackColor, whiteColor } = useDarkMode();
   const { imageCamera, localId, user, token } = useSelector(
     (state) => state.authReducer.value
   );
