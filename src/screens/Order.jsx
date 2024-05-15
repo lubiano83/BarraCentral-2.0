@@ -1,7 +1,6 @@
 /* Order */
 
 import { View, FlatList } from 'react-native';
-// import OrderData from "../data/orders.json";
 import OrderItem from '../components/OrderItem';
 import Header from '../components/Header';
 import {useDarkMode} from "../hooks/useDarkMode";

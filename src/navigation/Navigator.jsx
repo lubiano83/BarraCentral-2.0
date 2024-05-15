@@ -7,6 +7,7 @@ import { setUser } from "../features/userSlice";
 import { getSession } from "../persistence/index";
 import { useEffect } from'react';
 
+
 const Navigator = () => {
 
   const dispatch = useDispatch();
