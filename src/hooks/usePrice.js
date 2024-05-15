@@ -15,6 +15,5 @@ export const usePrice = () => {
         }
         return resultado;
     }
-
     return {formatearPrecio};
 };

@@ -3,7 +3,7 @@ import { StyleSheet, SafeAreaView, Platform, StatusBar } from "react-native";
 import { Provider } from "react-redux";
 import store from "./src/store/index";
 import Navigator from "./src/navigation/Navigator";
-import { initSQLiteDB, dropSessionsTable } from "./src/persistence/index";
+import { initSQLiteDB, dropSessionsTable, truncateSessionsTable } from "./src/persistence/index";
 
 (async() => {
   try {

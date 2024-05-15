@@ -10,10 +10,10 @@ const Inicio = ({ navigation }) => {
     return (
         <ImageBackground style={{height: "100%", width: "100%", flexDirection: "row", justifyContent: "center", alignItems: "center"}} source={require("../../assets/images/barra-central.webp")}>
             <View style={{position: "absolute", top: 20, right: 30}}>
-            <InicioMail />
+            {/* <InicioMail /> */}
             </View>
             <View style={{width: 150, position: "absolute", alignItems: "center", justifyContent: "center", flexDirection: "row"}}>
-                <InicioAyuda ayuda="Ayuda" />
+                {/* <InicioAyuda ayuda="Ayuda" /> */}
                 <InicioCarta navigation={navigation} />
             </View>
             <InicioTexto />
