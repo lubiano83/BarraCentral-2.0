@@ -26,9 +26,10 @@ const ItemDetail = ({ route, navigation }) => {
   return (
     <>
       {product ? (
+        <>
+        <Header title="Detail" navigation={navigation} />
         <ScrollView style={{height: "100%", alignItem: "center", backgroundColor: blackColor}}>
           <View>
-            <Header title="Detail" navigation={navigation} />
             <Image style={{alignItems: "center", justifyContent: "center", width: "100%", aspectRatio: 1/1}} source={{uri: product.image}} />
           </View>
           <View style={{alignItems: "flex-start", justifyContent: "center", width: "100%", paddingHorizontal: 20, paddingVertical: 15, color: whiteColor}}>
@@ -39,6 +40,7 @@ const ItemDetail = ({ route, navigation }) => {
           <Counter count={count} handleAddCart={handleAddCart} />
           <Text style={{marginTop: 10, color: whiteColor, fontSize: 24, fontWeight: "bold", textAlign: "center", paddingBottom: 20}}>Total: ${formatearPrecio(product.price * count)}</Text>
         </ScrollView>
+        </>
       ) : null}
     </>
   )

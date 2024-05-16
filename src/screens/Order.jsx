@@ -1,6 +1,6 @@
 /* Order */
 
-import { View, FlatList, ScrollView } from 'react-native';
+import { View, FlatList } from 'react-native';
 import OrderItem from '../components/OrderItem';
 import Header from '../components/Header';
 import {useDarkMode} from "../hooks/useDarkMode";

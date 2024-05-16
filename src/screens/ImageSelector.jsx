@@ -1,6 +1,5 @@
 /* ImageSelector */
-import { Image, View, Text, Pressable } from "react-native";
-import * as ExpoLibrary from "expo-media-library";
+import { Image, View, Text } from "react-native";
 import AddButton from "../components/AddButton";
 import { useCamera } from "../hooks/useCamera";
 import Header from "../components/Header";
