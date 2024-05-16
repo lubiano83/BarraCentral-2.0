@@ -2,7 +2,7 @@ BarraCentral
 
 Descripción:
 
-Es una aplicación desarrollada en React Native durante el curso de desarrollo de aplicaciones de CoderHouse. La aplicación ofrece una alternativa moderna y eficiente para que los restaurantes gestionen sus pedidos y órdenes en tiempo real, con una interfaz amigable y fácil de usar para el personal del restaurante. Incluye características como notificaciones de nuevos pedidos, historial de pedidos, gestión de inventarios, y soporte para múltiples usuarios y roles. Es importante destacar que esta es solo la versión del cliente y debe complementarse con la versión del administrador para una gestión completa del restaurante.
+Es una aplicación desarrollada en React Native durante el curso de desarrollo de aplicaciones de CoderHouse. La aplicación ofrece una alternativa moderna y eficiente para que los restaurantes gestionen sus pedidos y órdenes en tiempo real, con una interfaz amigable y fácil de usar para los clientes y personal del restaurante. Incluye características como notificaciones de nuevos pedidos, historial de pedidos, gestión de inventarios, y soporte para múltiples usuarios y roles. Es importante destacar que esta es solo la versión del cliente y debe complementarse con la versión del administrador para una gestión completa del restaurante.
 
 Características:
 
