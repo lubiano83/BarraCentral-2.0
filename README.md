@@ -35,3 +35,6 @@ Principales Dependencias:
 - yup (^1.4.0): Biblioteca de validación para esquemas de objetos.
 - expo-sqlite (~13.4.0): Proporciona una API para usar SQLite en aplicaciones Expo.
 
+/* Link */
+
+https://barra-central.netlify.app/
