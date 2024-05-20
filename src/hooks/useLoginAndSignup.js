@@ -50,7 +50,7 @@ export const useLoginAndSignup = () => {
       });
       triggerSignUp({ email, password, returnSecureToken: true });
     } catch (err) {
-        alert("There was an error.", err)
+        console.log(err.message);
       switch (err.path) {
         case "email":
           setErrorMail(err.message);

@@ -29,7 +29,7 @@ const MyProfile = ({ navigation }) => {
         if (Platform.OS !== 'web') await truncateSessionsTable()
         dispatch(clearUser())
     } catch (error) {
-      alert("There was an error.");
+      console.log(error.message);
     }
   }
 

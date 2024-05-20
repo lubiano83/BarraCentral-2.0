@@ -28,7 +28,7 @@ const Cart = () => {
               throw new Error("Incorrect code. The order cannot be confirmed.");
           }
       } catch (error) {
-          alert("Error confirming the order.")
+          console.log(error.message);
       }
     };
 
