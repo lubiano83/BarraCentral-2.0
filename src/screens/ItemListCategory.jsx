@@ -15,7 +15,7 @@ const ItemListCategory = ({ navigation, route }) => {
     return (
         <View>
             <Header title={category} navigation={navigation} />
-            <View style={{alignItems: "center", justifyContent: "center", width: "100%", paddingHorizontal: 20, backgroundColor: blackColor, height: "100%", paddingBottom: 140}}>
+            <View style={{ width: "100%", paddingHorizontal: 20, backgroundColor: blackColor, height: "100%", paddingBottom: 140}}>
                 <InputFilter setProductsFiltered={setProductsFiltered} category={category} />
                 <FlatList data={productsFiltered} renderItem={({item}) => <ProductItem product={item} navigation={navigation} /> } keyExtractor={product => product.id} />
             </View>

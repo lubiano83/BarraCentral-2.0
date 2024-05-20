@@ -1,5 +1,5 @@
 /* MyProfile */
-import { Image, View, Text } from "react-native";
+import { Image, View, Text, Platform } from "react-native";
 import AddButton from "../components/AddButton";
 import { useDispatch, useSelector } from "react-redux";
 import { useGetProfileImageQuery } from "../services/shopService";
@@ -26,10 +26,10 @@ const MyProfile = ({ navigation }) => {
 
   const signOut = async () => {
     try {
+        if (Platform.OS !== 'web') await truncateSessionsTable()
         dispatch(clearUser())
-        const response = await truncateSessionsTable();
     } catch (error) {
-      alert("There was an error.")
+      alert("There was an error.");
     }
   }
 

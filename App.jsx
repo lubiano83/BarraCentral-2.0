@@ -7,9 +7,11 @@ import { initSQLiteDB, dropSessionsTable, truncateSessionsTable } from "./src/pe
 
 (async() => {
   try {
-      const response = await initSQLiteDB()
+      if(Platform.OS !== 'web'){
+        const response = await initSQLiteDB()
+      }
   } catch (error) {
-      console.log("There was an error.");
+      alert("There was an error.");
   }
 })();
 

@@ -24,7 +24,7 @@ const Counter = ({count, handleAddCart}) => {
                 <AntDesign name="plus" size={36} color={whiteColor} />
             </Pressable>
         </View>
-        <View style={{flexDirection: "row", alignItems: "center", gap: 20, paddingHorizontal: 20}}>
+        <View style={{flexDirection: "row", gap: 20, paddingHorizontal: 20, width: "100%"}}>
             <Pressable style={{width: "100%", height: 50, alignItems: "center", justifyContent: "center", backgroundColor: whiteColor, borderRadius: 10, marginTop: 10}}>
                 <Text style={{fontSize: 22, fontWeight: "bold", color: blackColor}} onPress={handleAddCart}>Add To Cart</Text>
             </Pressable>

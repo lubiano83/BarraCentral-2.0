@@ -1,5 +1,5 @@
 /* LoginScreen */
-import { Pressable, Text, View, ImageBackground } from 'react-native';
+import { Pressable, Text, View, ImageBackground, Platform } from 'react-native';
 import InputForm from '../components/InputForm';
 import SubmitButton from '../components/SubmitButton';
 import { useLoginAndSignup } from '../hooks/useLoginAndSignup';
@@ -14,26 +14,29 @@ const LoginScreen = ({navigation}) => {
     const {onSubmitLogin, setEmail, errorMail, setPassword, errorPassword, result} = useLoginAndSignup();
 
     useEffect(() => {
-        if (result?.data && result.isSuccess) {
-          insertSession({
-            email: result.data.email,
-            localId: result.data.localId,
-            token: result.data.idToken,
-          })
-            .then((response) => {
-              dispatch(
-                setUser({
-                  email: result.data.email,
-                  idToken: result.data.idToken,
-                  localId: result.data.localId,
-                })
-              );
-            })
-            .catch((error) => {
-              alert("There was an error.")
-            });
-        }
-      }, [result]);
+      if (result?.data && result.isSuccess) {
+          (async ()=> {
+              try {
+                  if (Platform.OS !== 'web') {
+                      const response = await insertSession({
+                          email: result.data.email,
+                          localId: result.data.localId,
+                          token: result.data.idToken,
+                      })
+                  }
+                  dispatch(
+                      setUser({
+                          email: result.data.email,
+                          idToken: result.data.idToken,
+                          localId: result.data.localId,
+                      })
+                  )
+              } catch (error) {
+                alert("There was an error.");
+              }
+          })()
+      }
+  }, [result])
     
   return (
     <ImageBackground style={{width: "100%", height: "100%", justifyContent: "center", alignItems: "center"}} source={require("../../assets/images/barra-central.webp")}>

@@ -7,6 +7,8 @@ import {useDarkMode} from "../hooks/useDarkMode";
 import { useSelector } from "react-redux";
 import { useGetOrdersQuery } from "../services/shopService";
 import { useEffect, useState } from "react";
+import { useMostrar } from "../hooks/useMostrar";
+import OrderDetail from '../components/OrderDetail';
 
 const Order = () => {
 
@@ -14,6 +16,7 @@ const Order = () => {
     const {user} = useSelector(state => state.authReducer.value);
     const {data: orders, isSuccess} = useGetOrdersQuery(user);
     const [ordersFiltered, setOrdersFiltered] = useState();
+    const {handleMostrar, mostrar} = useMostrar();
 
     useEffect(() => {
       if(isSuccess) {
@@ -23,11 +26,15 @@ const Order = () => {
       };
     }, [orders, isSuccess, user])
 
+    console.log();
+
   return (
     <View style={{width: "100%", height: "100%", alignItems: "center", justifyContent: "space-between", backgroundColor: blackColor}}>
-        <Header title="Orders" />
+        <Header title={ mostrar ? "Order Detail" : "Orders"} />
         <View style={{width: "100%", height: "100%", marginBottom: 15, borderRadius: 10, backgroundColor: blackColor, overflow: "hidden", paddingHorizontal: 20, paddingVertical: 15}}>
-            <FlatList data={ordersFiltered} renderItem={({item}) => <OrderItem orderItem={item} /> } />
+          {/* { mostrar ? <OrderDetail handleMostrar={handleMostrar} /> :  */}
+          <FlatList data={ordersFiltered} renderItem={({item}) => <OrderItem orderItem={item} handleMostrar={handleMostrar}/> } /> 
+          {/* } */}
         </View>
     </View>
   )

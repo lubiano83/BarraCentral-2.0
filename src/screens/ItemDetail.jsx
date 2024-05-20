@@ -28,7 +28,7 @@ const ItemDetail = ({ route, navigation }) => {
       {product ? (
         <>
         <Header title="Detail" navigation={navigation} />
-        <ScrollView style={{height: "100%", alignItem: "center", backgroundColor: blackColor}}>
+        <ScrollView style={{height: "100%", backgroundColor: blackColor}}>
           <View>
             <Image style={{alignItems: "center", justifyContent: "center", width: "100%", aspectRatio: 1/1}} source={{uri: product.image}} />
           </View>

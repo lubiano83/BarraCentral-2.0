@@ -13,8 +13,7 @@ const Cart = () => {
     const dispatch = useDispatch();
     const {whiteColor, blackColor} = useDarkMode();
     const {formatearPrecio} = usePrice();
-    const { user } = useSelector(state => state.authReducer.value);
-    const {items: CartData, total} = useSelector(state => state.cartReducer.value);
+    const {items: CartData, total, user} = useSelector(state => state.cartReducer.value);
     const [triggerPostOrder, result] = usePostOrderMutation();
 
     const onConfirmOrder = async () => {

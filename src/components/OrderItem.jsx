@@ -3,7 +3,7 @@ import { Text, View } from 'react-native';
 import { Feather } from "@expo/vector-icons";
 import { useDarkMode } from "../hooks/useDarkMode";
 
-const OrderItem = ({orderItem}) => {
+const OrderItem = ({orderItem, handleMostrar}) => {
 
     const {whiteColor, blackColor} = useDarkMode();
     const TOTAL = orderItem.items.reduce((acc, currentItem) => (acc += currentItem.price * currentItem.quantity), 0);
@@ -16,7 +16,9 @@ const OrderItem = ({orderItem}) => {
             </Text>
             <Text style={{fontSize: 16, fontWeight: "bold", color: blackColor}}>${TOTAL}</Text>
         </View>
-        <Feather name="search" size={30} color={blackColor} />
+        <Feather name="search" size={30} color={blackColor} 
+        // onPress={() => handleMostrar()}
+        />
     </View>
   )
 }; export default OrderItem;
