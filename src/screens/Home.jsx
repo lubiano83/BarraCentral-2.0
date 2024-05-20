@@ -14,7 +14,7 @@ const Home = ({ navigation }) => {
   return (
     <>
       <Header title="Categories" navigation={navigation} />
-      <View style={{width: "100%", paddingHorizontal: 20, height: "100%", gap: 15, backgroundColor: blackColor, paddingTop: 15}}>
+      <View style={{width: "100%", paddingHorizontal: 20, height: "100%", gap: 15, backgroundColor: blackColor, paddingTop: 15, paddingBottom: 60}}>
           <FlatList showsVerticalScrollIndicator={false} keyExtractor={elemntoDeMiArray => elemntoDeMiArray} data={categories} renderItem={({item}) => <CategoryItem navigation={navigation} category={item} /> } />
       </View>
     </>

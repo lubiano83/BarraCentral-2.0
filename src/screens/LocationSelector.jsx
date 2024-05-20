@@ -19,10 +19,10 @@ const LocationSelector = ({ navigation }) => {
   return (
     <>
         <Header title="My Address"/>
-        <View style={{ flex: 1, alignItems: "center", justifyContent: "flex-start", gap: 20, backgroundColor: blackColor, paddingBottom: 30}}>
+        <View style={{ flex: 1, width: "100%", alignItems: "center", justifyContent: "flex-start", gap: 20, backgroundColor: blackColor, paddingBottom: 30}}>
             {/* Flatlist con las directions */}
            {location ? (
-                <ScrollView style={{height: "100%", alignItem: "center", backgroundColor: blackColor}}>
+                <ScrollView style={{height: "100%", width: "100%", alignItem: "center", backgroundColor: blackColor}}>
                     <MapPreview location={location} />
                     <View style={{paddingHorizontal: 20, width: "100%", gap: 20, alignItems: "center"}}>
                         <Text style={{fontSize: 18, color: whiteColor, paddingTop: 20}}>Lat: {location.latitude}, long: {location.longitude}.</Text>

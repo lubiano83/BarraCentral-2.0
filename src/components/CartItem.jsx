@@ -17,10 +17,10 @@ const CartItem = ({cartItem}) => {
   }
 
   return (
-    <View style={{height: "auto", width: "100%", flexDirection: "row", alignItems: "center", justifyContent: "space-between", borderWidth: 2, borderColor: whiteColor, borderRadius: 10, overflow: "hidden", marginBottom: 15, backgroundColor: whiteColor}}>
+    <View style={{height: "auto", width: "100%", flexDirection: "row", borderWidth: 2, borderColor: whiteColor, borderRadius: 10, overflow: "hidden", marginBottom: 15, backgroundColor: whiteColor}}>
         <Image style={{width: "30%", aspectRatio: 1/1}} source={{uri: cartItem.image}} />
         <View style={{width: "70%", flexDirection: "row", alignItems: "center", justifyContent: "flex-end", paddingHorizontal: 20, gap: 20}}>
-          <View style={{width: "90%", gap: 10}}>
+          <View style={{width: "100%", gap: 10, paddingHorizontal: 10}}>
             <Text style={{fontSize: 20, fontWeight: "bold", color: blackColor, textAlign: "right", width: "100%"}}>{cartItem.title}</Text>
             <Text style={{fontSize: 16, fontWeight: "bold", color: blackColor, textAlign: "right", width: "100%"}}>({cartItem.quantity}) ${formatearPrecio(cartItem.price * cartItem.quantity)}</Text>
           </View>

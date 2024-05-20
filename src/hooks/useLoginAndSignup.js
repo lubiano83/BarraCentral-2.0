@@ -24,7 +24,7 @@ export const useLoginAndSignup = () => {
       const validation = loginSchema.validateSync({ email, password });
       triggerSignIn({ email, password });
     } catch (err) {
-        alert("There was an error.")
+        console.log(err.message);
       switch (err.path) {
         case "email":
           setErrorMail(err.message);

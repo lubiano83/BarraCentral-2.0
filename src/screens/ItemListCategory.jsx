@@ -13,12 +13,12 @@ const ItemListCategory = ({ navigation, route }) => {
     const {category} = route.params
 
     return (
-        <View>
+        <>
             <Header title={category} navigation={navigation} />
-            <View style={{ width: "100%", paddingHorizontal: 20, backgroundColor: blackColor, height: "100%", paddingBottom: 140}}>
+            <View style={{ width: "100%", paddingHorizontal: 20, backgroundColor: blackColor, height: "100%", paddingBottom: 60}}>
                 <InputFilter setProductsFiltered={setProductsFiltered} category={category} />
                 <FlatList data={productsFiltered} renderItem={({item}) => <ProductItem product={item} navigation={navigation} /> } keyExtractor={product => product.id} />
             </View>
-        </View>
+        </>
     )
 }; export default ItemListCategory;

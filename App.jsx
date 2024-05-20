@@ -11,7 +11,7 @@ import { initSQLiteDB, dropSessionsTable, truncateSessionsTable } from "./src/pe
         const response = await initSQLiteDB()
       }
   } catch (error) {
-      alert("There was an error.");
+      console.log(error.message);
   }
 })();
 

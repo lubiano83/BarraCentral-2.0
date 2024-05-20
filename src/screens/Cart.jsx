@@ -33,12 +33,12 @@ const Cart = () => {
     };
 
   return (
-    <View style={{width: "100%", height: "100%", paddingBottom: 190, alignItems: "center", justifyContent: "space-between", backgroundColor: blackColor}}>
+    <View style={{width: "100%", height: "100%", paddingBottom: 190, backgroundColor: blackColor}}>
         <Header title="Cart"/>
-        <View style={{paddingHorizontal: 20, alignItems: "center", justifyContent: "center", paddingTop: 15}}>
+        <View style={{paddingHorizontal: 20, paddingTop: 15, width: "100%"}}>
             <FlatList data={CartData} keyExtractor={cartItem => cartItem.id} renderItem={({item}) => <CartItem cartItem={item} /> } />
         </View>
-        <View style={{alignItems: "center", justifyContent: "center", width: "100%", gap: 10, paddingHorizontal: 20, paddingTop: 10}}>
+        <View style={{alignItems: "center", justifyContent: "center", width: "100%", gap: 10, paddingHorizontal: 20, paddingTop: 10, position: "absolute", bottom: 20}}>
             <Text style={{color: whiteColor, fontSize: 24, textAlign: "center"}}>Total: ${total ? formatearPrecio(total) : 0}</Text>
             <Pressable style={{width: "100%", height: 50, alignItems: "center", justifyContent: "center", backgroundColor: whiteColor, borderRadius: 10}} onPress={onConfirmOrder}>
                 <Text style={{fontSize: 24, fontWeight: "bold", color: blackColor, marginBottom: 1}}>Buy</Text>
