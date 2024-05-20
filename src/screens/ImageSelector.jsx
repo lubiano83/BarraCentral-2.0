@@ -45,7 +45,7 @@ const ImageSelector = ({ navigation }) => {
                             </>
                         )}
                     </View>
-                    <View style={{ width: "100%", height: "auto", paddingHorizontal: 20, justifyContent: "center", alignItems: "center"}}>
+                    <View style={{ width: "100%", height: "auto", justifyContent: "center", alignItems: "center"}}>
                         <GoBackButton title="Go back" onPress={goBackToMyProfile} />
                     </View>
                 </View>
