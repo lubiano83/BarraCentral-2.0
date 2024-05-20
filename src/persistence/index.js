@@ -1,7 +1,7 @@
 import * as ExpoSQLite from "expo-sqlite"
 import { Platform } from "react-native"
 
-const db = null;
+let db = null;
  if(Platform.OS !== 'web') db = ExpoSQLite.openDatabase("sessions.db"); // solo funciona en dispositivos moviles
 
 export const initSQLiteDB = () => {
