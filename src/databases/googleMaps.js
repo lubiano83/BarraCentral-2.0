@@ -1,2 +1,2 @@
 /* googleMaps */
-export const googleMapsApiKey = "AIzaSyDEVJFPcVw60piJP98lskT_mZPkUX3a50o"
+export const googleMapsApiKey = process.env.EXPO_PUBLIC_GOOGLE_MAPS_API_KEY;
