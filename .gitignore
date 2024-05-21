@@ -32,4 +32,4 @@ yarn-error.*
 *.tsbuildinfo
 
 # local env files
-.env*.local
+.env
