@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
-import { baseUrl } from "../databases/realtimeDatabase"
+import { baseUrl } from "../databases/realtimeDatabase";
 
 export const shopApi = createApi({
     reducerPath: "shopApi", //Establish a unique name for the API
