@@ -26,15 +26,15 @@ const Order = () => {
       };
     }, [orders, isSuccess, user])
 
-    console.log();
+    
 
   return (
     <View style={{width: "100%", height: "100%", alignItems: "center", justifyContent: "space-between", backgroundColor: blackColor}}>
         <Header title={ mostrar ? "Order Detail" : "Orders"} />
         <View style={{width: "100%", height: "100%", marginBottom: 15, borderRadius: 10, backgroundColor: blackColor, overflow: "hidden", paddingHorizontal: 20, paddingVertical: 15}}>
-          {/* { mostrar ? <OrderDetail handleMostrar={handleMostrar} /> :  */}
-          <FlatList data={ordersFiltered} renderItem={({item}) => <OrderItem orderItem={item} handleMostrar={handleMostrar}/> } /> 
-          {/* } */}
+          { mostrar ? <OrderDetail handleMostrar={handleMostrar} /> : 
+          <FlatList data={ordersFiltered} renderItem={({item}) => <OrderItem orderItem={item} handleMostrar={handleMostrar} /> } /> 
+          }
         </View>
     </View>
   )

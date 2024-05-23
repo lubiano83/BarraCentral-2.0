@@ -8,6 +8,8 @@ const OrderItem = ({orderItem, handleMostrar}) => {
     const {whiteColor, blackColor} = useDarkMode();
     const TOTAL = orderItem.items.reduce((acc, currentItem) => (acc += currentItem.price * currentItem.quantity), 0);
 
+    console.log(orderItem);
+
   return (    
     <View style={{height: 75, width: "100%", flexDirection: "row", alignItems: "center", justifyContent: "space-between", borderRadius: 10, overflow: "hidden", backgroundColor: whiteColor, paddingHorizontal: 20, marginBottom: 15}}>
         <View style={{alignItems: "flex-start", justifyContent: "center"}}>
@@ -16,9 +18,7 @@ const OrderItem = ({orderItem, handleMostrar}) => {
             </Text>
             <Text style={{fontSize: 16, fontWeight: "bold", color: blackColor}}>${TOTAL}</Text>
         </View>
-        <Feather name="search" size={30} color={blackColor} 
-        // onPress={() => handleMostrar()}
-        />
+        <Feather name="search" size={30} color={blackColor} onPress={() => handleMostrar()} />
     </View>
   )
 }; export default OrderItem;

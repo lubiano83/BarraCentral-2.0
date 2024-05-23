@@ -13,7 +13,8 @@ const Cart = () => {
     const dispatch = useDispatch();
     const {whiteColor, blackColor} = useDarkMode();
     const {formatearPrecio} = usePrice();
-    const {items: CartData, total, user} = useSelector(state => state.cartReducer.value);
+    const { items: CartData, total} = useSelector(state => state.cartReducer.value);
+    const {user} = useSelector(state => state.authReducer.value);
     const [triggerPostOrder, result] = usePostOrderMutation();
 
     const onConfirmOrder = async () => {
@@ -21,7 +22,7 @@ const Cart = () => {
       try {
           // Verificar si el código ingresado coincide con el código secreto fijo
           if (codigoIngresado === "mesa-01") {
-              triggerPostOrder({items: CartData, user: user, total}); // la orden esta puesta con el mail de momento
+              triggerPostOrder({items: CartData, user, total}); // la orden esta puesta con el mail de momento
               dispatch(cleanCart());
               return alert("Order sent and awaiting confirmation!");
           } else {
