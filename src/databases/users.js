@@ -1,3 +1,3 @@
 /* users */
 export const apiKey = process.env.EXPO_PUBLIC_API_KEY;
-export const baseAuthUrl = 'https://identitytoolkit.googleapis.com/v1';
+export const baseAuthUrl = process.env.EXPO_PUBLIC_BASE_AUTH_URL;
